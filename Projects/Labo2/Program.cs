@@ -39,18 +39,26 @@ namespace Labo2
                 {
                     System.Console.Write(contact.ToString() + Environment.NewLine);
                 }
-                System.Console.Write(independantContacts.Count());
+                System.Console.Write(independantContacts.Count()+Environment.NewLine);
             }
-
-            var consultantContacts = contacts.Where(consultant => consultant.Profession == "Consultant" && consultant.Companies);
+            
+            var consultantContacts = contacts.Where(consultant => consultant.Profession == "Consultant" && consultant.Companies.Any(e => e == company2));
             if (consultantContacts != null)
             {
                 foreach (ProfessionalContact contact in consultantContacts)
                 {
-                    System.Console.Write(contact.ToString() + Environment.NewLine);
+                    System.Console.Write("Contact de la liste machin bidule : "+contact.ToString() + Environment.NewLine);
                 }
-                System.Console.Write(consultantContacts.Count());
+                System.Console.Write(consultantContacts.Count()+Environment.NewLine);
             }
+
+            Car car1 = new Car("1-AJG-258");
+            Car car2 = new Car("1-JUI-657");
+            ContactCar contactCar1 = new ContactCar(private1, car1);
+            ContactCar contactCar2 = new ContactCar(consultant1, car2);
+
+            contactCar1.DynamicPrint(private1);
+            contactCar2.DynamicPrint(consultant1);
 
             System.Console.Read();
 

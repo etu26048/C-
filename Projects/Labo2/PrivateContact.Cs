@@ -36,6 +36,9 @@ namespace Labo2
                     DateTime.Today.Year == Birthdate.Year &&
                     DateTime.Today.Day == Birthdate.Day);
         }
-
+        public string Print()
+        {
+            return this.ToString() + " est un contact privé";
+        }
     }
 }

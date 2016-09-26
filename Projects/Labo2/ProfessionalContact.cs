@@ -34,6 +34,10 @@ namespace Labo2
         {
             Companies.Add(c);
         }
+        public string Print()
+        {
+            return this.ToString() + " est un contact professionel";
+        }
 
 
 
