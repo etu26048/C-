@@ -5,14 +5,23 @@
 		
 		<script>
 			let _nombreEntre = prompt("Entrez un nombre : ");
+			Number(_nombreEntre);
+			console.log(_nombreEntre);
+			let _saveNombre = _nombreEntre;
 			document.write("<table>Tableau");
 			document.write("<tr><th>No</th><th>Nombre</th><th>Min</th><th>Max</th><th>Somme</th></tr>");
-			while(isFinite(Number(_nombreEntre))){
-				let cptLigne = 0;
-				while(cptLigne < 5){
-					document.write("<tr><td>"+(cptLigne++)+"</td><td>"+_nombreEntre+"</td><td>"+"");
+			let somme = 0;
+			
+			Number(somme);
+			for(let _cptLigne=0;_cptLigne < 5 && isFinite(_nombreEntre);_cptLigne++){
+				let _MinNombre = Math.min(_saveNombre, _nombreEntre);
+				let _MaxNombre = Math.max(_saveNombre, _nombreEntre);
+				somme += Number(_nombreEntre);
+				document.write("<tr><td>"+(_cptLigne+1)+"</td><td>"+_nombreEntre+"</td><td>"+_MinNombre+"</td><td>"+_MaxNombre+"</td><td>"+somme+"</td></tr>");
 				
-				}
+				_saveNombre = _nombreEntre;
+				_nombreEntre = prompt("Entrez un nombre  : ");
+				Number(_nombreEntre);
 			}
 			document.write("</table>");
 			alert("Fin de la boucle");
