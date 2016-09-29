@@ -8,6 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <ListView Grid.Row="1" ItemsSource="{Binding}" Name="Contacts">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" DataContext="{Binding ElementName=Contacts, Path=SelectedItem}">
+                        <TextBlock Text="{Binding FirstName}" />
+                        <TextBlock Text="{Binding LastName}"/>
+                        <TextBlock Text="{Binding Email}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
     </Grid>
+    <Page.Resources>
+        <ResourceDictionary Source="DictionaryContact.xaml" />
+    </Page.Resources>
 </Page>

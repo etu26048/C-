@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Model;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,9 +23,16 @@ namespace Labo3
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private List<Contact> lstContacts = new List<Contact>()
+        {
+            new Contact("Charlier","Isabelle","isabelle.charlier@henallux.be"),
+            new Contact("Scholtes","Samuel","samuel.scholtes@henallux.be")
+
+        };
         public MainPage()
         {
             this.InitializeComponent();
+            DataContext = lstContacts;
         }
     }
 }
