@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="UTF-8"/> 
+	<script>
+		var cpt = 0;
+		function clicButton(){
+			cpt++;
+			alert('Vous avez cliqué '+cpt	+' fois');
+		}
+	
+		function clicLien(){
+			cpt=0;
+		}
+	
+	</script>
+  </head> 
+  <body> 
+    <p>Combien de fois aurez-vous le courage de cliquer sur le bouton ?</p> 
+	<button onclick="clicButton();" >Click me!</button> 
+	<p>Cliquez <a onclick="clicLien();">ici</a> pour remettre le compteur à zéro !</p> 
+  </body> 
+</html>
