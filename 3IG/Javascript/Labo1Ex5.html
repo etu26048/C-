@@ -2,35 +2,50 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<style>
+			.negatif{color:red;font-weight:bold}
+			.positif{color:blue}
 		
+		</style>
 		<script>
-			let _nombreEntre = prompt("Entrez un nombre : ");
-			Number(_nombreEntre);
-			console.log(_nombreEntre);
-			let _saveNombre = _nombreEntre;
-			document.write("<table>Tableau");
-			document.write("<tr><th>No</th><th>Nombre</th><th>Min</th><th>Max</th><th>Somme</th></tr>");
-			let somme = 0;
-			
-			Number(somme);
-			for(let _cptLigne=0;_cptLigne < 5 && isFinite(_nombreEntre);_cptLigne++){
-				let _MinNombre = Math.min(_saveNombre, _nombreEntre);
-				let _MaxNombre = Math.max(_saveNombre, _nombreEntre);
-				somme += Number(_nombreEntre);
-				document.write("<tr><td>"+(_cptLigne+1)+"</td><td>"+_nombreEntre+"</td><td>"+_MinNombre+"</td><td>"+_MaxNombre+"</td><td>"+somme+"</td></tr>");
-				
-				_saveNombre = _nombreEntre;
-				_nombreEntre = prompt("Entrez un nombre  : ");
-				Number(_nombreEntre);
+			function afficheValeur(nombre){
+				return nombre >= 0 ? "<td><span class=positif>"+nombre+"</span></td>" : "<td><span class=negatif>"+nombre+"</span></td>";			
 			}
-			document.write("</table>");
-			alert("Fin de la boucle");
-		
-		
+			
 		</script>
 	</head>
 	<body>
-	
+		<script>
+			let _nombreEntre = prompt("Entrez un nombre : ");
+			_nombreEntre = Number(_nombreEntre);
+			let _saveNombre = 0;
+			let max =_nombreEntre;
+			let min = Number.MAX_VALUE;
+			document.write("<table>Tableau");
+			document.write("<tr><th>No</th><th>Nombre</th><th>Min</th><th>Max</th><th>Somme</th></tr>");
+			let somme = 0,_MinNombre, _MaxNombre;
+			somme = Number(somme);
+			
+			for(let _cptLigne=0;_cptLigne < 5 && isFinite(_nombreEntre);_cptLigne++){
+				_MinNombre = Math.min(min, _nombreEntre);
+				if(_MinNombre < min)
+				{
+					min = _MinNombre;
+				}
+				if(_MaxNombre > max)
+				{
+					max = _MaxNombre;
+				}
+				_MaxNombre = Math.max(max, _nombreEntre);
+				somme = _saveNombre + _nombreEntre;
+				document.write("<tr><td>"+(_cptLigne+1)+"</td>"+afficheValeur(_nombreEntre)+afficheValeur(_MinNombre)+afficheValeur(_MaxNombre)+afficheValeur(somme)+"</tr>");
+				_saveNombre = somme;
+				_nombreEntre = prompt("Entrez un nombre  : ");
+				_nombreEntre = Number(_nombreEntre);
+			}
+			document.write("</table>");
+			alert("Fin de la boucle");		
+		</script>
 	
 	</body>
 </html>
