@@ -21,7 +21,7 @@ namespace TestUnitaire1
                 Country = "Belgique",
                 Email = "Salut.toi@hotmail.Fr",
                 Id = 4,
-                Name = "Salut",
+                Name = "JeanJacques",
                 PostCode = "5000",
                 Remark ="Pas gentil"
             };
