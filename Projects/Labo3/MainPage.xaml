@@ -7,19 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Grid.Row="1" ItemsSource="{Binding}" Name="Contacts">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<TextBlock x:Name="allContacts" HorizontalAlignment="Left" Margin="73,67,0,0" TextWrapping="Wrap" Text="All the contacts" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="contactDetails" HorizontalAlignment="Left" Margin="355,67,0,0" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top" Foreground="#FF080808" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="contactList" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Contact's list" VerticalAlignment="Top" FontSize="45" Foreground="Blue" FontWeight="Bold"/>
+        -->
+        <TextBlock Grid.Row="0" Text="Contact's List" FontSize="45" FontWeight="Bold" Foreground="Blue"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="All the contacts" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Details" FontSize="20" FontWeight="Bold"/>
+        
+        <ListView Grid.Row ="3" ItemsSource="{Binding}" Name="Contacts">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" DataContext="{Binding ElementName=Contacts, Path=SelectedItem}">
-                        <TextBlock Text="{Binding FirstName}" />
-                        <TextBlock Text="{Binding LastName}"/>
-                        <TextBlock Text="{Binding Email}"/>
-                    </StackPanel>
+                    <TextBlock Text="{Binding LastName}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1" DataContext="{Binding ElementName=Contacts, Path=SelectedItem}">
+            <TextBlock Text="{Binding FirstName}"/>
+            <TextBlock Text="{Binding LastName}"/>
+            <TextBlock Text="{Binding Email}"/>
+        </StackPanel>
     </Grid>
     <Page.Resources>
         <ResourceDictionary Source="DictionaryContact.xaml" />
