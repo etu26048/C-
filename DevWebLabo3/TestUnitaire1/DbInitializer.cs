@@ -15,8 +15,8 @@ namespace TestUnitaire1
             Customer customer = new Customer()
             {
                 AccountBalance = 223.14,
-                AdressLine1 = "Rue des cerises",
-                AdressLine2 = "n25 boite 5",
+                AddressLine1 = "Rue des cerises",
+                AddressLine2 = "n25 boite 5",
                 City = "Namur",
                 Country = "Belgique",
                 Email = "Salut.toi@hotmail.Fr",
