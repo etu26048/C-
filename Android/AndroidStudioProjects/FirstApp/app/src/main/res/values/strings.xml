@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string name="HelloId">Hello World!</string>
+    <string name="buttonId">OK</string>
+    <string name="salut_toi">Salut toi</string>
+    <string name="coucou_Toi">Coucou jérôme</string>
+    <string name="para2">Para2</string>
+    <string name="para1">Para1</string>
+    <string name="listviewactivity">ListViewActivity</string>
+    <string name="go_to_child_activity">Go To Child Activity</string>
+    <string name="child_name">Child Activity</string>
+    <string name="button">Sent Result To Parent</string>
+    <string name="buttonCall">Button Call</string>
+    <string name="buttonNet">Go to Internet</string>
+</resources>
