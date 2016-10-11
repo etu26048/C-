@@ -20,6 +20,7 @@ namespace Labo4.ViewModel
         private Student _selectedStudent;
         private INavigationService _navigationService;
         private ICommand _editStudentCommand;
+        //SimpleIoc s'en sert
         [PreferredConstructor]
         public MainViewModel(INavigationService navigationService)
         {

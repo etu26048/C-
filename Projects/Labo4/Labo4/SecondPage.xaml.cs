@@ -31,6 +31,8 @@ namespace Labo4
         //Sans ça y'a rien qui s'affiche
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            //Fonction appelé sur l'objet de type SecondViewModel
+            //On fait comme ça pour le lier à la vue à cause du Framework
             ((SecondViewModel)DataContext).OnNavigateTo(e);
         }
         protected override void OnNavigatedFrom(NavigationEventArgs e)

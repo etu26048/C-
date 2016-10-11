@@ -11,15 +11,25 @@
 
 
     <Grid x:Name="CommandBarCource" Grid.Row="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <ListView Grid.Row="1" Width="355" HorizontalAlignment="Left"
-                  ItemsSource="{Binding Students,Mode=TwoWay}"
-                  SelectedItem="{Binding SelectedStudent,Mode=TwoWay}" 
+        <TextBlock Text="Student's list" />
+        <ListView Grid.Row="1" 
+                  Width="355" HorizontalAlignment="Left"
+                  SelectedItem="{Binding SelectedStudent,Mode=TwoWay}"
+                  ItemsSource="{Binding Students, Mode=TwoWay}"
                   Margin="0,35.167,0,-35">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <AppBarButton x:Name="EditStudent" Grid.Column="1" 
                       Icon="Edit"
