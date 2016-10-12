@@ -1,0 +1,9 @@
+1) Faire un Héritage entre Véhicule,voiture,camion ?
+
+2)ID du véhicule ?
+
+3)Modèle ,une Entité ? 
+
+4)FactureImpayé à lier avec Véhicule ou avec Visite ?
+
+5) N à N pour véhicule propriétaire ?

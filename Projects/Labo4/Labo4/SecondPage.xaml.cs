@@ -28,7 +28,7 @@ namespace Labo4
         {
             this.InitializeComponent();
         }
-        //Sans ça y'a rien qui s'affiche
+        //Sans ça y'a rien qui s'affiche car ça initialise les composants graphique
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //Fonction appelé sur l'objet de type SecondViewModel

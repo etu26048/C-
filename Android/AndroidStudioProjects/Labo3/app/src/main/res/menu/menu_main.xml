@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/itemPhoneID"
+        android:title="@string/phone"
+        android:icon="@drawable/ic_call_black_18dp"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/itemMessageID"
+        android:icon="@drawable/ic_message_black_18dp"
+        android:title="@string/message"
+        app:showAsAction="never"/>
+    <item
+        android:title="@string/childactivity"
+        android:icon="@drawable/ic_subdirectory_arrow_right_black_18dp"
+        android:id="@+id/itemChildActivityID"
+        app:showAsAction="always"/>
+</menu>
