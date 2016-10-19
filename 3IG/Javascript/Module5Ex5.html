@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script>
+			function afficheLangage(obj)
+			{
+				//Pas du tout clean code mais je ne sais pas comment faire
+				//le if raccourci dans le gabarit
+				if("annee" in obj)
+					obj.oo ? alert(`${obj.nom} (vu en ${obj.annee} ): orienté objet`) :alert(`${obj.nom} (vu en ${obj.annee} ): pas orienté objet`); 
+				else
+					obj.oo ? alert(`${obj.nom} (pas vu en ${obj.annee} ): orienté objet`) :alert(`${obj.nom} (pas vu en ${obj.annee} ): pas orienté objet`); 
+
+			}
+		
+			let c ={};
+			c.nom = "C";
+			c.annee = "IG1";
+			c.oo = false;
+			afficheLangage(c);
+			
+			let java ={};
+			java.nom="Java";
+			java.annee = "IG1";
+			java.oo = true;
+			afficheLangage(java);
+		
+			let python = {};
+			python.nom="Python";
+			python.oo = true;
+			afficheLangage(python);
+			
+			let basic={};
+			basic.nom="basic";
+			basic.annee = null;
+			basic.oo = false;
+			afficheLangage(basic);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

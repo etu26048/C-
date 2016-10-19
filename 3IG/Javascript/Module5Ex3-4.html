@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script>
+			function afficheTableau(tab)
+			{
+				for(let i = 0; i < tab.length; i++)
+				{
+					console.log(`Contenu de la case ${i} : ${tab[i]}`);
+				}
+			}
+			
+			function somme(tab)
+			{
+				let somme = 0;
+				somme = Number(somme);
+				for(let val of tab)
+				{
+					somme+=val;
+				}
+				return somme;
+			}
+			
+			function premierPair(tab)
+			{
+				for(let i in tab)
+				{
+					if(tab[i] % 2 == 0)
+						return tab[i];
+				}
+			}
+			
+			function dernierPair(tab)
+			{
+				for(let i = tab.length-1; i < tab.length; i--)
+				{
+					if(tab[i] %2 == 0)
+						return tab[i];
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1> Log de travail </h1>
+		<script>
+			let diviseurs = [12,6,4,3,2,1];
+			let jours = ["lun","mar","mer","jeu","ven","sam","dim"];
+			let matièresWebParAnnée = [ ["html","css"],["javascript","DOM"],["AJAX","PHP"]]
+			//Exercice 4 :
+			for(let i in diviseurs)
+			{
+				console.log(diviseurs[i]);
+			}
+			for(let val of jours)
+			{
+				console.log(val);
+			}
+			
+			//Etape 4 : 
+			var entree = prompt("Nom du dossier : ");
+			var pile = [];
+			var i = 0;
+			while(entree != null)
+			{
+				if(entree != "")
+					document.write(`<p>Nouveau dossier : ${entree} - actuellement : ${pile.push(entree)} dossier(s) dans la pile</p>`);
+				else{
+					if(pile.length == 0)
+					{
+						document.write(`<p>Plus de dossier dans la pile !</p>`);
+					}
+					else
+					{
+						let lastValue = pile.pop();
+						document.write(`<p>Dossier en cours : ${lastValue} - reste : ${pile.length} dossier(s) dans la pile</p>`);
+					}
+				}
+				entree = prompt("Nom du dossier : ");
+			}
+		</script>
+	</body>
+</html>

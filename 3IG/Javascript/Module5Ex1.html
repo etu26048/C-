@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<h1>Tests sur les fonctions en Javascript</h1> 
+		<script> 
+			 
+			//Etape 2 : on ne peux pas accèder à utilisateur car il n'est pas initialisé
+			/*function salue (nom) { 
+				//document.write(`<p>Bonjour, ${nom} !</p>`); 
+				
+			}*/
+			/*var salue = function(nom){
+				document.write("<p>Bonjour, "+nom+" !</p>")
+				};*/
+			
+			//Etape 4 : Ce code n'est pas éxécuté car c'est à ce moment précis qu'on définit la fonction salue ,
+			//il n'y a donc pas de hoisting de cette même fonction (étant donné qu'elle déclarée et initialisée ici)
+			/*let salue = function(nom){
+				document.write("<p>Bonjour, "+nom+" !</p>")
+				};*/
+				
+			//Etape 5 : salue sera déclarée (mais pas initialisée) en début de bloc grâce au var,
+			//salue contiendra une valeur undefined
+		    /*var salue = function(nom){
+				document.write("<p>Bonjour, "+nom+" !</p>")
+				};*/
+			//Etape 6 : 
+			const salue = new Function("nom",'document.write("<p>Bonjour, "+nom+" !</p>");');
+			let utilisateur = prompt("Entrez votre nom : ");
+		    salue(utilisateur);
+			
+			//Etape 7 :
+			//Sous forme standard
+			function citeNFois(string, number)
+			{
+				number = Number(number);
+				if(Number > 0){
+					for(let i = 0;i < number; i++)
+					{
+						console.log((i+1)+") "+string);
+					}
+				}else console.log("Entrez un second argument positif");
+			}
+			//Sous forme d'affectation
+			let citeAutantFois = function citeNFois(string, number)
+			{
+				number = Number(number);
+				if(number > 0){
+					for(let i = 0;i < number; i++)
+					{
+						console.log((i+1)+") "+string);
+					}
+				}else console.log("Entrez un second argument positif");
+			}
+			//Syntaxe "Orienté objet"
+			const citeAutantFois = new Function(number,"number = Number(number);if(number > 0){"
+					+"for(let i = 0;i < number; i++)"
+					+"{"
+						+"console.log((i+1)+') '+string);"
+					+"}"
+				+"}else console.log('Entrez un second argument positif');");
+		</script> 
+	</body>
+</html>
