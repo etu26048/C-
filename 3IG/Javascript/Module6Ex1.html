@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style>
+			#titre{
+				font-size:24px;
+				font-weight:bold;
+			}
+			#para{
+				background-color:olive;
+				color:papayawhip;
+				border:1px solid black;
+				padding: 12px 12px 12px 12px;
+			 }	
+		
+		</style>
+	</head>
+	<body>
+		<h1 id="titre">Titre de cette page</h1>
+		<p id="para">Paragraphe de cette page</p>
+		<script>
+			let titreHTML = document.getElementById("titre"); 
+			let paraHTML = document.getElementById("para"); 
+			
+			const elem = {
+				cible : paraHTML,
+				//cible contiendra l'objet h1, pas besoin de refaire un document.getElementById !!!!
+				changeTexte(txt){this.cible.innerHTML = txt;},
+			};
+			
+			elem.ajouteText = function ajouteTexte(txt){this.cible.innerHTML += txt};
+			
+			elem.changeFond = function changeFond(col){
+				elem.changeTexte(" La couleur est désormais "+col); 
+				this.cible.style.backgroundColor = col;
+				};
+				
+			elem.changeFond("fuchsia");
+			elem.changeFond("chocolate"); 
+			
+			elem.changeCouleur = function changeCouleur(col){
+					let couleurActuelle = col;
+					let ancienneCouleur = couleurActuelle;
+					this.changeFond(col);
+				}
+			//console.log(elem.cible.nodeName);
+			//elem.changeTexte("My title");
+		</script>
+	</body>
+</html>

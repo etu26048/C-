@@ -7,7 +7,7 @@
 			{
 				//Pas du tout clean code mais je ne sais pas comment faire
 				//le if raccourci dans le gabarit
-				if("annee" in obj)
+				if("annee" in obj && typeof(obj.annee) == "number")
 					obj.oo ? alert(`${obj.nom} (vu en ${obj.annee} ): orienté objet`) :alert(`${obj.nom} (vu en ${obj.annee} ): pas orienté objet`); 
 				else
 					obj.oo ? alert(`${obj.nom} (pas vu en ${obj.annee} ): orienté objet`) :alert(`${obj.nom} (pas vu en ${obj.annee} ): pas orienté objet`); 
@@ -19,6 +19,8 @@
 			c.annee = "IG1";
 			c.oo = false;
 			afficheLangage(c);
+			
+			let cobol = { nom : "Cobol", année : 2, oo : false }; 
 			
 			let java ={};
 			java.nom="Java";
@@ -36,6 +38,29 @@
 			basic.annee = null;
 			basic.oo = false;
 			afficheLangage(basic);
+			
+			let php = { nom : "php", année : 3, oo : true, inutile : "oui" }; 
+			let prolog = { nom : "Prolog", oo : false }; 
+			let csharp = { nom : "C#", année : 3, oo : false };
+			delete php.inutile;
+			prolog.annee = 2;
+			csharp.oo = true;
+			//Etape 7 : 
+			let langages = [c, java, basic, python, basic, php, prolog, csharp]; 
+			//anneauxElfes est un tableau d'objets
+			let anneauxElfes = [ 
+			  { nom : "Narya", porteur : "Cirdan" }, 
+			  { nom : "Nenya", porteur : "Galadriel" }, 
+			  { nom : "Vilya", porteur : "Gil-Galad" } 
+			]; 
+			function listeNoms(tab)
+			{
+				for(let val of tab)
+				{
+					console.log(val.nom);
+				}
+			}
+			listeNoms(langages);
 		</script>
 	</head>
 	<body>

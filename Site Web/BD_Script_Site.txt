@@ -1,0 +1,75 @@
+create table Client(
+				NumeroClient NUMERIC(2) NOT NULL AUTO_INCREMENT,
+				Nom VARCHAR(50) NOT NULL,
+				Prenom VARCHAR(50) NOT NULL,
+				Email VARCHAR(100) NOT NULL,
+				Password VARCHAR(20) NOT NULL,
+				Telephone NUMERIC(10),
+				DateNaissance DATE,
+				Civilite CHAR(1) NOT NULL,
+				Localite NUMERIC(2) NOT NULL,
+				constraint ID_Client_ID PRIMARY KEY (NumeroClient)
+);
+
+create table Adresse(
+				IDAdresse NUMERIC(2) NOT NULL AUTO_INCREMENT,
+				Pays VARCHAR(50) NOT NULL,
+				Ville VARCHAR(50) NOT NULL,
+				CodePosal NUMERIC(4) NOT NULL,
+				constraint ID_Adresse_ID PRIMARY KEY(IDAdresse)
+);
+
+create table Commande(
+				Reference NUMERIC(5) NOT NULL,
+				Date DATE NOT NULL,
+				PrixTotal NUMERIC(8,2) NOT NULL,
+				MontantReduction NUMERIC(5,2) NOT NULL,
+				TotalAvecReduction NUMERIC(8,2) NOT NULL,
+				NumeroCli NUMERIC(2) NOT NULL,
+				constraint ID_Commande_ID PRIMARY KEY(Reference)
+);
+			
+create table Produit(
+				Reference NUMERIC(5) NOT NULL,
+				Libelle VARCHAR(50) NOT NULL,
+				Image VARCHAR(150) NOT NULL,
+				PrixUnitaire NUMERIC(5,2) NOT NULL,
+				Description VARCHAR(100) NOT NULL,
+				QteDisponible NUMERIC(5) NOT NULL,
+				NomCategorie VARCHAR(50) NOT NULL,
+				constraint ID_Produit_ID PRIMARY KEY(Reference)
+);
+
+create table Promo(
+				Reference NUMERIC(5) NOT NULL,
+				Description VARCHAR(100) NOT NULL,
+				Pourcentage NUMERIC(2,2) NOT NULL,
+				DateDebut DATE NOT NULL,
+				DateFin DATE NOT NULL,
+				constraint ID_Promo_ID PRIMARY KEY(Reference)
+);
+
+create table LigneProduit(
+				Quantite NUMERIC(5) NOT NULL,
+				PrixReel NUMERIC(8,2) NOT NULL,
+				RefCommande NUMERIC(5) NOT NULL,
+				RefProduit NUMERIC(5) NOT NULL,
+				constraint ID_LigneProduit_ID PRIMARY KEY(RefCommande,RefProduit)
+);
+
+
+alter table Client add constraint REF_Cli_Adr_FK
+		FOREIGN KEY(Localite)
+		REFERENCES Adresse;
+			
+alter table Commande add constraint REF_Com_Cli_FK
+		FOREIGN KEY(NumeroCli)
+		REFERENCES Client;
+
+alter table LigneProduit add constraint REF_Lp_Com_FK
+			FOREIGN KEY(RefCommande)
+			REFERENCES Commande;
+		
+alter table LigneProduit add constraint REF_Lp_Prod_FK
+			FOREIGN KEY(RefProduit)
+			REFERENCES Produit;

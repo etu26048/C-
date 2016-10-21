@@ -1,0 +1,46 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script>
+			function compteSupérieur(tab, nombre)
+			{
+				let cpt = 0;
+				for(let val of tab)
+				{
+					val >= nombre ? cpt++ : 0;
+				} 
+				return cpt;
+			}
+			
+			function afficheProp(o)
+			{
+				//affichera le nom de la propriété et non pas la valeur !
+				for(let nom in o) console.log(nom);
+			}
+			
+			function beauRésultat(f, x)
+			{
+				return "Le "+f.name+" de "+x+" est "+f(x);				
+			}
+		
+		</script>
+	</head>
+	<body>
+		<script>
+			let cotes = [5, 12, 9, 17, 4, 13, 15, 8, 11, 16]; 
+			console.log(compteSupérieur(cotes, 13)); // doit afficher 4
+			afficheProp( { année : 2040, nom : "Spock", vulcain : true } ); 
+			cotes.max = 20;
+			
+			//Etape 6 :
+			function foisTrois (x) { return x * 3; } 
+			let foisQuatre = function quadruple (x) { return x * 4; } 
+			let puissance2 = function (x) { return x * x; } 
+			foisTrois.résultat = foisTrois.name
+			foisQuatre.résultat = foisQuatre.name
+			//Je n'arrive pas é récupérer le nom de ma fonction pour afficher "Le Carré de ..."
+			puissance2.résultat = "carré";
+		</script>
+	</body>
+</html>
