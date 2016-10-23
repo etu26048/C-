@@ -37,7 +37,7 @@ create table Adresse(
 create table Commande(
 	Reference NUMERIC(5) NOT NULL,
 	DateCommande DATE NOT NULL,
-	MontantReduction NUMERIC(5,2) NOT NULL,
+	MontantReduction NUMERIC(5,2) NOT NULL check(MontantReduction > 0),
 	NumeroCli int NOT NULL,
 	constraint Commande_ID PRIMARY KEY(Reference)
 );
@@ -45,15 +45,15 @@ create table Commande(
 create table Produit(
 	Reference NUMERIC(5) NOT NULL,
 	UrlImage VARCHAR(150) NOT NULL,
-	PrixUnitaire NUMERIC(5,2) NOT NULL,
+	PrixUnitaire NUMERIC(5,2) NOT NULL check(PrixUnitaire > 0),
 	ReferencePromo NUMERIC(5),
     ReferenceCategorie int NOT NULL,
 	constraint Produit_ID PRIMARY KEY(Reference)
 );
 
 create table LigneProduit(
-	Quantite NUMERIC(5) NOT NULL,
-	PrixReel NUMERIC(8,2) NOT NULL,
+	Quantite NUMERIC(5) NOT NULL check(Quantite > 0),
+	PrixReel NUMERIC(8,2) NOT NULL check(PrixReel > 0),
 	RefCommande NUMERIC(5) NOT NULL,
 	RefProduit NUMERIC(5) NOT NULL,
 	constraint LigneProduit_ID PRIMARY KEY(RefCommande,RefProduit)
@@ -61,7 +61,7 @@ create table LigneProduit(
 
 create table Promo(
 	Reference NUMERIC(5) NOT NULL,
-	Pourcentage NUMERIC(2,2) NOT NULL,
+	Pourcentage NUMERIC(2,2) NOT NULL check(Pourcentage between 0 and 100),
 	DateDebut DATE NOT NULL,
 	DateFin DATE NOT NULL,
 	constraint Promo_ID PRIMARY KEY(Reference)

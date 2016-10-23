@@ -40,9 +40,12 @@
 			elem.changeFond("chocolate"); 
 			
 			elem.changeCouleur = function changeCouleur(col){
-					let couleurActuelle = col;
-					let ancienneCouleur = couleurActuelle;
+					this.ancienneCouleur = this.couleurActuelle;
+					this.couleurActuelle = col;
 					this.changeFond(col);
+				}
+			elem.retourCouleur = function (){
+					this.changeFond(this.ancienneCouleur);
 				}
 			//console.log(elem.cible.nodeName);
 			//elem.changeTexte("My title");
