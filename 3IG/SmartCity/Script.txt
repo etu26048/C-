@@ -1,12 +1,14 @@
-
-
+drop table hopital;
+drop table medecin;
+drop table numerourgence;
+drop table pharmarcie;
+drop table postedegarde;
 
 create table Hopital(
 	NumTva varchar(12) primary key,
     UrlSiteWeb varchar(30),
     TelUrgence varchar(9),
-    BreveDescription varchar(30),
-	Nom varchar(20) not null,
+	Nom varchar(80) not null,
     NumTel varchar(12) not null,
     Email varchar(25),
     Fax varchar(9),
@@ -15,8 +17,8 @@ create table Hopital(
     CodePostal numeric(4) not null,
     Ville varchar(25) not null,
     Pays varchar(20) not null,
-    Longitude numeric(3,7) not null,
-    Latitude numeric(2,7) not null
+    Longitude numeric(10,7) not null,
+    Latitude numeric(10,7) not null
 );
 
 create table Medecin(
@@ -33,8 +35,8 @@ create table Medecin(
     CodePostal numeric(4) not null,
     Ville varchar(25) not null,
     Pays varchar(20) not null,
-    Longitude numeric(3,7) not null,
-    Latitude numeric(2,7) not null
+    Longitude numeric(10,7) not null,
+    Latitude numeric(10,7) not null
 );
 
 create table Pharmarcie(
@@ -52,8 +54,8 @@ create table Pharmarcie(
     CodePostal numeric(4) not null,
     Ville varchar(25) not null,
     Pays varchar(20) not null,
-    Longitude numeric(3,7) not null,
-    Latitude numeric(2,7) not null
+    Longitude numeric(10,7) not null,
+    Latitude numeric(10,7) not null
 );
 
 create table PosteDeGarde(
@@ -68,8 +70,8 @@ create table PosteDeGarde(
     CodePostal numeric(4) not null,
     Ville varchar(25) not null,
     Pays varchar(20) not null,
-    Longitude numeric(3,7) not null,
-    Latitude numeric(2,7) not null
+    Longitude numeric(10,7) not null,
+    Latitude numeric(10,7) not null
 );
 
 create table NumeroUrgence(

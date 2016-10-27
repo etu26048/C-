@@ -3,6 +3,10 @@ drop table medecin;
 drop table numerourgence;
 drop table pharmarcie;
 drop table postedegarde;
+drop table conge;
+drop table postegarde_conge;
+drop table medecin_conge;
+drop table pharmacie_conge;
 
 create table Hopital(
 	NumTva varchar(12) primary key,
@@ -59,6 +63,7 @@ create table Pharmarcie(
 );
 
 create table PosteDeGarde(
+	Numero int auto_increment primary key,
 	HeureOuverture numeric(4) not null,
     HeureFermeture numeric(4) not null,	
     Nom varchar(20) not null,
@@ -78,4 +83,32 @@ create table NumeroUrgence(
 	NumTel varchar(12) primary key,
     Label varchar(30) not null,
 	UrlSiteWeb varchar(30)
+);
+
+create table Conge(
+	Id int auto_increment primary key,
+    DateDebut date not null,
+    DateFin date not null,
+    Libelle varchar(45) not null
+);
+
+create table Pharmacie_Conge(
+	IdPharConge int,
+    Numtva varchar(12),
+    constraint NumTvaPharmacie_fk foreign key(Numtva) references Pharmacie(NumTva),
+    constraint IdCongePharmacie_fk foreign key(IdPharConge) references Conge(Id)
+);
+
+create table PosteGarde_Conge(
+	IdPosteGarde int,
+    IdPosteGardeConge int,
+	constraint IdPosteGarde_fk foreign key(IdPosteGarde) references PosteDeGarde(Id),
+    constraint IdCongePosteGarde_fk foreign key(IdPosteGardeConge) references Conge(Id)
+);
+
+create table Medecin_Conge(
+	NumTva varchar(12), 
+	IdMedecinConge int,
+    constraint NumTvaMedecin_fk foreign key (NumTva) references Medecin(NumTva),
+    constraint IdCongeMedecin_fk foreign key (IdMedecinConge) references Conge(Id)
 );

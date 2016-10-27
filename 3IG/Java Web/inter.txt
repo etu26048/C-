@@ -1,0 +1,7 @@
+Welcome=welcome
+InOurMagicWorld= in our magic world
+MagicKey=magic key
+
+Welcome=Bienvenue
+InOurMagicWorld=dans notre monde magique
+MagicKey=clé magique
