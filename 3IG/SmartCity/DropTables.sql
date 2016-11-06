@@ -1,0 +1,9 @@
+drop table hopital;
+drop table numerourgence;
+drop table postegardeconge;
+drop table medecinconge;
+drop table pharmacieconge;
+drop table medecin;
+drop table pharmacie;
+drop table postedegarde;
+drop table conge;
