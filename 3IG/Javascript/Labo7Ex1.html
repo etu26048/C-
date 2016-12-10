@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"/>
+    <style> 
+      #cadre { 
+        background-color: #EFFFEF; 
+        border: 1px solid blue; 
+        padding: 4px; 
+      } 
+    </style> 
+  </head> 
+  <body> 
+    <div id="cadre"> 
+      <p>Le cadre commence ici.</p> 
+      <script type="text/javascript">
+        document.getElementById("cadre").innerHTML+="<p>Nouveau paragraphe</p>";
+        let p1 = {};
+        let p2 = {};
+        p1.texte = "Quelle prétention de prétendre que l'informatique est récente : Adam et Ève avaient déjà un Apple !";
+        p1.auteur = "Anonyme";
+        p1.couleur = "purple";
+        p1.gras = true;
+
+        p2.texte = "Cookie : anciennement petit gâteau sucré qu’on acceptait avec plaisir. Aujourd’hui : petit fichier informatique drôlement salé qu’il faut refuser avec véhémence.";
+        p2.auteur = "Luc Fayard";
+        p2.couleur = "darkgreen";
+        p2.gras = false;
+        let protoPara = {};
+        Object.setPrototypeOf(p1, protoPara);
+        Object.setPrototypeOf(p2, protoPara);
+        protoPara.toString = function () { 
+          return this.texte + " (" + this.auteur + ")"; 
+        }; 
+        p1.toString();
+        p2.toString();
+        protoPara.affiche = function(){ document.getElementById("cadre").innerHTML+="<p style='color : "+this.couleur+";"+(this.gras ? "font-weight:bold" : "")+";"+"'>"+this.texte+"<br>---<em>"+this.auteur+"</em></p>" }
+        p1.affiche();
+        p2.affiche();
+
+        let p3 = Object.create(protoPara);
+        p3.texte = "Y’a rien de plus con qu’un ordinateur.";
+        p3.auteur = "Louis Schuffenecker";
+        p3.couleur = "blue";
+        p3.gras = true;
+        p3.affiche();
+        let propriétésP4 = {texte: "On voit bien que tu n’as pas rencontré certains de mes étudiants, Louis !", auteur: "enseignant anonyme", couleur: "olive", gras: false}; 
+        let p4 = Object.create(protoPara);
+        Object.assign(p4, propriétésP4);
+        p4.affiche();
+      </script>
+    </div> 
+  </body> 
+</html>

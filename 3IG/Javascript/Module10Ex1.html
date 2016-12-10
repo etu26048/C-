@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="UTF-8"/>
+    <script type="text/javascript">
+      function coteEnPourcents(cote, max) {
+        let max = max || 20;
+        return (cote / max) * 100
+      }
+      coteEnPourcents(14);
+      coteEnPourcents(15, 30);
+
+      function prixTVAC(prix, tva) {
+        let tva = tva || 21;
+        prix = (prix * tva) / 100;
+        return prix;
+      }
+      prixTVAC(100);
+      prixTVAC(200, 10);
+      prixTVAC(150, 0);
+
+      function(...valeurs) {
+        for(let valeur of valeurs) {
+          
+        }
+
+      }
+    </script> 
+  </head> 
+  <body> 
+  </body> 
+</html> 

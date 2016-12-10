@@ -26,7 +26,7 @@ namespace UnitTestProject2
         }
 
         [TestMethod]
-        public void CanGetHospitals()
+        public void HasOneHospital()
         {
             using (var context = GetContext())
             {

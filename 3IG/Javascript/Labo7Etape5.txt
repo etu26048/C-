@@ -1,0 +1,36 @@
+Number.prototype.afficheEtoiles = function(){
+	let i = 0;
+	while(i < this)
+	{
+		console.log("*");
+		i++;
+	}
+}
+
+String.prototype.bégaie = function(){
+	let i = 0;
+	let chaine = "";
+	while(i < this.length)
+	{
+		chaine += this.charAt(i) + this.charAt(i);
+		i++;
+	}
+	console.log(chaine);
+}
+
+"Javascript".bégaie();
+
+Function.prototype.présente = function(){
+	console.log("La fonction attend "+this.length+" argument(s)");
+}
+
+parseInt.présente();
+
+Array.prototype.somme = function(){
+	let somme = 0;
+	for(let i = 0; i < this.length; i++)
+		somme+= this[i];
+	console.log(somme);
+}
+
+[1, 3, 5].somme(); 

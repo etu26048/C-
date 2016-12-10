@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="UTF-8"/> 
+  </head> 
+  <body> 
+    <p>Un tiramisu pour 8 personnes :</p> 
+    <ul> 
+      <li data-key="oeufs">3 gros oeufs</li> 
+      <li data-key="sucre">100g de sucre</li> 
+      <li data-key="sucre vanillé">1 sachet de sucre 
+        <strong>vanillé</strong></li> 
+      <li id="masca" data-key="mascarpone">250g de mascarpone</li> 
+      <li data-key="biscuits">24 <i>biscuits</i> à la cuillère</li> 
+      <li data-key="café">1/2 litre de café noir <strong>non 
+        sucré</strong></li> 
+      <li data-key="cacao">30g de poudre de cacao 
+        <strong>amer</strong></li> 
+    </ul> 
+    <script>
+      let b = document.body;
+
+      //Etape 3 
+      //a)
+      b.children[1].children[1].innerHTML
+      //b)
+      b.childNodes[3].childNodes[3].innerHTML
+      //c)
+      b.children[1].children[1].firstChild
+      //d)
+      b.firstElementChild.nextElementSibling.children[1].innerHTML
+      b.children[1].children[0].nextElementSibling.innerHTML
+
+      //Etape 6 
+      //1. 
+      let strong = document.getElementsByTagName("strong");
+      for(let i = 0; i < strong.length; i++) {
+        strong[i].style.color = "blue";
+      }
+      //2.
+      var marsala = document.createElement("li");
+      marsala.dataset.key = "marsala";
+      marsala.innerHTML = "un petit verre de marsala sec";
+      document.body.children[1].appendChild(marsala);
+      //3.
+      var list = document.body.children[1];
+      for(let indice = 0; indice < list.length;i++) {
+        list.children[i].innerHTML += document.write("<span class = 'label'>"+list.children[i].dataset["key"]+"</span>");
+      }
+      
+
+
+    </script>
+  </body> 
+</html>
