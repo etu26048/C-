@@ -1,0 +1,261 @@
+//////////////////////////////////////////DAVE////////////////////////////////////////
+insert into Doctors
+values(
+‘Etienne’,
+‘Rosman’,
+‘081401531’,
+‘081401880’,
+Null,
+‘Rue de Longeau’, 
+18,
+‘Dave’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘Paul’,
+‘Cartiaux’,
+‘081490403’,
+Null,
+Null,
+‘Rue du Château de Dave’,
+1,
+‘Dave’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘Bruno’,
+‘De Wulf’,
+‘081402055’,
+Null,
+Null,
+‘Rue des Nolettes’,
+65,
+‘Dave’,
+5100
+);
+
+
+insert into Drugstores
+values(
+false,
+Null,
+Null,
+‘Pharmacie Duwez sprl’,
+‘081400042’,
+Null,
+Null,
+‘Rue de Longeau(DV)’, 
+56, 
+Dave’,
+5100
+);
+
+
+
+insert into Drugstores
+values(
+false,
+Null,
+Null,
+‘Dominique Mees’,
+‘081402844’,
+Null,
+Null,
+‘Rue de Naninne(DV)’, 
+40, 
+Dave’,
+5100
+);
+
+
+
+
+
+
+//////////////////////////////////////////WEPION////////////////////////////////////////
+
+insert into Doctors
+values(
+‘Eric’,
+‘Lambert’, 
+‘081462762’,
+Null,
+Null,
+‘Rue des Fransières’, 
+1, 
+‘Wépion’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘Luc’
+‘Petit’ 
+‘081461999’,
+‘081461999’,
+Null,
+‘Rue Marel Lecomte’,
+31, 
+‘Wépion’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘Vincent’,
+‘Degrez’, 
+‘081460404’,
+Null,
+Null,
+‘Chemin du Bienvenu’, 
+69,
+‘Wépion’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘Yves’,
+‘Laroche’,
+‘081441170’,
+‘081461761’,
+Null,
+‘Clos des Spinettes’, 
+7, 
+‘Wépion’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘Marie-Jeanne’,
+‘Sebille’, 
+‘081450681’,
+Null,
+Null,
+‘Chaussée de Dinant’, 
+747,
+‘Wépion’,
+5100
+) ;
+
+insert into Doctors
+values(
+‘yves’,
+‘Delforge‘,
+‘081476050’,
+‘081460520’,
+Null,
+‘Rue Fonds du Suary’, 
+14, 
+‘Wépion’,
+5100
+) ;
+
+
+insert into Drugstores
+values(
+false,
+‘http://www.baudoulcosse.be/’,
+Null,
+‘Baudoul-Cosse sa’,
+‘081461012’,
+‘081460445’,
+Null,
+‘Chaussée de Dinant’, 
+996, 
+Wépion’,
+5100
+);
+
+
+
+
+insert into Drugstores
+values(
+false,
+‘http://www.aposite.be/13501/’,
+Null,
+‘Constandt-Moreau sprl’,
+‘081461163’,
+‘081461163’,
+Null,
+‘Chaussée de Dinant’, 
+1234, 
+Wépion’,
+5100
+);
+
+
+//////////////////////////////////////////ERPENT////////////////////////////////////////
+insert into Doctors
+values(
+‘Bernard’
+‘Laloyaux’,
+‘081305444’,
+Null,
+Null,
+‘Rue de Veiaine’,
+44,
+‘Erpent’,
+5101
+) ;
+
+insert into Doctors
+values(
+‘Marie-France’,
+‘Dupai’,
+‘081304382’,
+Null,
+Null,
+‘Ru des Pouillots’,
+4-6,
+‘Erpent’
+5101
+) ;
+
+insert into Doctors
+values(
+‘Ngoc-Lien’,
+‘Nguyen-thi’,
+‘0471520047’,
+Null,
+Null,
+‘Rue des Aubépines’,
+29,
+‘Erpent’,
+5101
+) ;
+insert into Doctors
+values(
+‘Henri’,
+‘Charloteaux’,
+‘081303265’,
+‘081301548’,
+Null,
+‘Clos de la Cense’,
+4,
+‘Erpent’,
+5101
+) ;
+
+
+insert into Drugstores
+values(
+false,
+Null,
+Null,
+‘Pharmacie Pirard S’,
+‘081305094’,
+Null,
+Null,
+‘Chaussée de Marche’,
+530, 
+‘Érpent’,
+5101 
+
+

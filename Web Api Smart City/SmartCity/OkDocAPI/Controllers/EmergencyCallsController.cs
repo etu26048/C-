@@ -9,18 +9,19 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class EmergencyCallsController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/EmergencyCalls
-        public IQueryable<EmergencyCall> GetEmergencyCall()
+        public IEnumerable<EmergencyCall> GetEmergencyCall()
         {
-            return db.EmergencyCall;
+            return db.EmergencyCall.ToList();
         }
 
         // GET: api/EmergencyCalls/5
@@ -37,6 +38,7 @@ namespace OkDocAPI.Controllers
         }
 
         // PUT: api/EmergencyCalls/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutEmergencyCall(string id, EmergencyCall emergencyCall)
         {
@@ -72,6 +74,7 @@ namespace OkDocAPI.Controllers
         }
 
         // POST: api/EmergencyCalls
+        [Authorize]
         [ResponseType(typeof(EmergencyCall))]
         public async Task<IHttpActionResult> PostEmergencyCall(EmergencyCall emergencyCall)
         {
@@ -102,6 +105,7 @@ namespace OkDocAPI.Controllers
         }
 
         // DELETE: api/EmergencyCalls/5
+        [Authorize]
         [ResponseType(typeof(EmergencyCall))]
         public async Task<IHttpActionResult> DeleteEmergencyCall(string id)
         {

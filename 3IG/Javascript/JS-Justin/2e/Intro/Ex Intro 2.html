@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html>   
+		<head>    
+			<meta charset="UTF-8"/	>
+				<script>
+				function changeDyn(txt){
+					document.getElementById("dyna").innerHTML = txt;
+				}
+				</script>
+				<script>
+				var dynMinuscule = true;
+				function toggleDyn()
+				{
+				((dynMinuscule) ? changeDyn('DYNAMIQUE') : changeDyn('dynamique'));
+				((dynMinuscule) ? dynMinuscule = false : dynMinuscule = true);
+				}
+				</script>
+		</head>   
+		<body>     
+			<p><strong>Javascript</strong> est un langage de scripts compris 
+			par la plupart des navigateurs web. Ce sont ces derniers qui   
+			exécutent le code Javascript.</p>   
+			<p>Grâce à Javascript, les pages web deviennent 
+			<ul>    
+				<li>interactives,</li>      
+				<li>plus intéressantes,</li>     
+				<li>plus <span  id='dyna' onclick="toggleDyn();">dynamiques</span> !</li> 
+			</ul></p> 
+			<script>
+				alert("Cliquez sur Ok.");
+				document.write("<h2> les origines de Javascript</h2>");
+			</script>
+			<p>Javascript est un standard construit par le  
+			<a href='http://www.w3c.org'>WWW Consortium</a>.</p>  
+		</body> 
+</html> 

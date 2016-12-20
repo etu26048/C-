@@ -9,25 +9,26 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class DrugstoresController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Drugstores
-        public IQueryable<Drugstore> GetPharmacy()
+        public IEnumerable<Drugstore> GetPharmacy()
         {
-            return db.Pharmacy;
+            return db.Pharmacy.Include("locality").ToList();
         }
 
         // GET: api/Drugstores/5
         [ResponseType(typeof(Drugstore))]
-        public async Task<IHttpActionResult> GetDrugstore(string id)
+        public async Task<IHttpActionResult> GetDrugstore(long id)
         {
-            Drugstore drugstore = await db.Pharmacy.FindAsync(id);
+            Drugstore drugstore = await db.Pharmacy.Include("locality").FirstAsync(d => d.Id == id);
             if (drugstore == null)
             {
                 return NotFound();
@@ -37,8 +38,9 @@ namespace OkDocAPI.Controllers
         }
 
         // PUT: api/Drugstores/5
+        [Authorize]
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutDrugstore(string id, Drugstore drugstore)
+        public async Task<IHttpActionResult> PutDrugstore(long id, Drugstore drugstore)
         {
             if (!ModelState.IsValid)
             {
@@ -50,7 +52,29 @@ namespace OkDocAPI.Controllers
                 return BadRequest();
             }
 
-            db.Entry(drugstore).State = EntityState.Modified;
+            var entity = db.Pharmacy.Find(id);
+            entity.Locality = await db.Locations.FindAsync(drugstore.Locality.City, drugstore.Locality.PostalCode);
+            
+            //if (await db.Locations.FindAsync(drugstore.Locality.City, drugstore.Locality.PostalCode) != null)
+            //{
+            //    var tmpLocality = drugstore.Locality;
+            //    drugstore.Locality = null;
+            //    drugstore.Locality = await db.Locations.FindAsync(tmpLocality.City, tmpLocality.PostalCode);
+            //}
+
+            //db.Entry(drugstore).State = EntityState.Modified;
+            //db.Entry(drugstore.Locality).State = EntityState.Modified;
+            entity.Name = drugstore.Name;
+            entity.latitude = drugstore.latitude;
+            entity.longitude = drugstore.longitude;
+            entity.Number = drugstore.Number;
+            entity.Street = drugstore.Street;
+            entity.PhoneNumber = drugstore.PhoneNumber;
+            entity.URLWebSite = drugstore.URLWebSite;
+            entity.Watch = drugstore.Watch;
+            //entity.Schedule = drugstore.Schedule;
+            //entity.Holiday = drugstore.Holiday;
+            entity.RowVersion = drugstore.RowVersion;
 
             try
             {
@@ -72,6 +96,7 @@ namespace OkDocAPI.Controllers
         }
 
         // POST: api/Drugstores
+        [Authorize]
         [ResponseType(typeof(Drugstore))]
         public async Task<IHttpActionResult> PostDrugstore(Drugstore drugstore)
         {
@@ -79,36 +104,46 @@ namespace OkDocAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.Pharmacy.Add(drugstore);
-
-            try
+            if (await db.Locations.FindAsync(drugstore.Locality.City, drugstore.Locality.PostalCode) != null)
             {
-                await db.SaveChangesAsync();
+
+                drugstore.Locality = await db.Locations.FindAsync(drugstore.Locality.City, drugstore.Locality.PostalCode);
+                db.Pharmacy.Add(drugstore);
             }
-            catch (DbUpdateException)
-            {
-                if (DrugstoreExists(drugstore.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = drugstore.Id }, drugstore);
         }
 
         // DELETE: api/Drugstores/5
+        [Authorize]
         [ResponseType(typeof(Drugstore))]
-        public async Task<IHttpActionResult> DeleteDrugstore(string id)
+        public async Task<IHttpActionResult> DeleteDrugstore(long id)
         {
             Drugstore drugstore = await db.Pharmacy.FindAsync(id);
             if (drugstore == null)
             {
                 return NotFound();
+            }
+
+            IEnumerable<Schedule> schedules = drugstore.Schedule.ToList();
+            if (schedules != null)
+            {
+                foreach (var schedule in schedules)
+                {
+                    db.Schedules.Remove(schedule);
+                }
+
+            }
+
+            IEnumerable<Holiday> holidays = drugstore.Holiday.ToList();
+            if (holidays != null)
+            {
+                foreach (var holiday in holidays)
+                {
+                    db.Holidays.Remove(holiday);
+                }
+
             }
 
             db.Pharmacy.Remove(drugstore);
@@ -126,7 +161,7 @@ namespace OkDocAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool DrugstoreExists(string id)
+        private bool DrugstoreExists(long id)
         {
             return db.Pharmacy.Count(e => e.Id == id) > 0;
         }

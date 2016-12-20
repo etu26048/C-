@@ -1,0 +1,26 @@
+<html>
+	<head>
+	<meta charset ="UTF-8">
+		<script> 
+			var x;
+			var x = prompt("Entrez un nombre.",7);
+			function carre(x){
+				return x*x;
+			}
+			document.write("le nombre au carré est : " + carre(x));
+		</script>
+		<script>
+			var msg;
+			var msg = prompt("Entrez votre message :",0);
+			function alertImportant (msg){
+				return  "MESSAGE IMPORTANT  :\n" + msg;			
+			}
+			<!-- apparemment prompt ne fonctionne qu'avec des chiffres et non des chaines de caractère-->
+		</script>
+	</head>
+	<body>
+		
+		
+		<p> message important <script>alertImportant(msg)</script></p>
+	</body>
+</html>

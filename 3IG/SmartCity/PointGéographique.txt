@@ -1,0 +1,9 @@
+Hôpitals : 
+--------------
+Avenue Albert 1er 185 => 50,46708, 4,88616
+place Louise Godin 15 => 50,46012, 4,84313
+rue Saint-Luc 8 => 50,47665, 4,88372
+rue Sait-Hubert 84 => 50,42943, 4,87553
+rue Louis Loiseau 39A => 50,456854, 4,83852
+rue de Bricgniot 205 => 50,481864, 4,826336
+----------------------------------------------

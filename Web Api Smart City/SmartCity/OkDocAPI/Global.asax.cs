@@ -20,6 +20,7 @@ namespace OkDocAPI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Models.ApplicationDbContext>());
+
         }
     }
 }

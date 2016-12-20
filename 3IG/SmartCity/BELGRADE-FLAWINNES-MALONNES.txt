@@ -1,0 +1,188 @@
+
+//////////////////////////////BELGRADE////////////////////////////////
+insert into Doctors
+values(
+‘Michel’
+‘Gérard’,
+‘081732164’,
+Null,
+Null,
+‘Rue Deneumoustier’,
+108,
+‘Belgrade’,
+5001
+) ;
+
+insert into Doctors
+values(
+‘Francine’,
+‘Fassoul’,
+‘081740845’,
+‘081740845’,
+Null,
+‘Avenue Abras’,
+110,
+‘Belgrade’
+5001
+) ;
+
+insert into Doctors
+values(
+‘Jacqueline’,
+‘Nangniot’,
+‘081730287’,
+Null,
+Null,
+‘Rue des Balsamines’,
+29,
+‘Belgrade’,
+5001
+) ;
+
+
+insert into Drugstores
+values(
+false,
+‘www.pharmaciebelpharma.be/pages/35alhome.html’,
+Null,
+‘Belpharma sa’,
+‘081730461’,
+‘081730461’,
+Null,
+‘Avenue Joseph Abras’, 
+54, 
+Belgrade
+5001
+);
+
+
+
+
+insert into Drugstores
+values(
+false,
+Null,
+Null,
+‘Colin-Joris D.’,
+‘081741153’,
+Null,
+Null,
+‘Avenue Jean Delhaye(BL)’,
+1, 
+‘Belgrade’,
+5001 
+) ;
+
+
+
+
+
+
+//////////////////////////////FLAWINNES////////////////////////////////
+
+insert into Doctors
+values(
+‘Konstant’,
+‘Detournay’,
+‘081731671’,
+Null,
+Null,
+‘Rue Fernand Cochard’, 
+18,
+‘Flawinne’,
+5020
+) ;
+
+insert into Doctors
+values(
+‘Pierre’,
+‘Hermant’,
+‘081741117’,
+Null,
+Null,
+‘Rue F. Cochard’,
+48,
+‘Flawinne’,
+5020
+) ;
+
+insert into Doctors
+values(
+‘Benoît’,
+‘Schoonvaere’,
+‘081735813’,
+Null,
+Null,
+‘Rue J. Eusèbe’,
+8,
+‘Flawinne’,
+5020
+);
+
+insert into Drugstores
+values(
+false,
+Null,
+Null,
+‘Moëns Paul’,
+‘081212276’,
+Null,
+Null,
+‘Rue Florimond Bidron’, 
+30, 
+‘Flawinne’,
+5020
+);
+
+
+insert into Drugstores
+values(
+false,
+www.heures.be/multipharma/namur/5
+Null,
+‘Multipharma, Groupe Multipharma’,
+‘081741077’,
+‘081741077’,
+Null,
+‘Rue Aimable Vigneron-Colin(FW)’,
+23, 
+‘Flawinne’,
+5020
+) ;
+
+//////////////////////////////MALONNE////////////////////////////////
+
+
+MALONNE
+
+insert into Drugstores
+values(
+false,
+‘www.epc-familia.be’,
+Null,
+‘Pharmacie Familia, E P C’,
+‘081444171’,
+Null,
+‘info@epc-familia.be’,
+‘Rue d'Insevaux(ML)’, 
+102, 
+‘Malonne’,
+5020
+) ;
+
+
+insert into Drugstores
+values(
+false,
+‘www.pharmacie-mainil.be/’,
+Null,
+‘Pharmacie Mainil-Paillet sprl’,
+‘081444178’,
+Null,
+‘info@pharmacie-mainil.be’,
+‘Fond de Malonne(ML)’,
+100, 
+‘Malonne’,
+5020 
+) ;
+

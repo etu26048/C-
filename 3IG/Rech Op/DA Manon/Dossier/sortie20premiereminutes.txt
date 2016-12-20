@@ -1,0 +1,694 @@
+temps de service = 0
+Nombre d'arrivées = 0
+      stations au debut de la minute :
+      tableau de station en fin de minute: 
+      cout total = 4320.000000
+------------------------------------------------------------------------------
+temps de service = 1
+Nombre d'arrivées = 4
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 4
+type client = Relatif    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 3
+type client = Relatif    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4322.600000
+------------------------------------------------------------------------------
+temps de service = 2
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 6
+type client = Relatif    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 3
+type client = Relatif     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 5
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 2
+type client = Relatif    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Absolu    duree de service restante = 5
+type client = Relatif    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4326.725000
+------------------------------------------------------------------------------
+temps de service = 3
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 2
+type client = Relatif     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Absolu     duree de service restante = 5
+type client = Relatif     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 5
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 1
+type client = Relatif    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 4
+type client = Relatif    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4333.325000
+------------------------------------------------------------------------------
+temps de service = 4
+Nombre d'arrivées = 5
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 1
+type client = Relatif     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 4
+type client = Relatif     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Absolu     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 5
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 0
+type client = Relatif    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 3
+type client = Relatif    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4343.550000
+------------------------------------------------------------------------------
+temps de service = 5
+Nombre d'arrivées = 4
+      files d'attente en debut de minute : 
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Relatif     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 3
+type client = Relatif     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Absolu     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 5
+      tableau de station en fin de minute: 
+type client = Ordinaire    duree de service restante = 3
+type client = Relatif    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 2
+type client = Relatif    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4352.900000
+------------------------------------------------------------------------------
+temps de service = 6
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 5
+type client = Absolu    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+      tableau de station en fin de minute: 
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4363.650000
+------------------------------------------------------------------------------
+temps de service = 7
+Nombre d'arrivées = 4
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 1
+type client = Absolu     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+      tableau de station en fin de minute: 
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 5
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4374.400000
+------------------------------------------------------------------------------
+temps de service = 8
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 5
+type client = Absolu     duree de service restante = 4
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 2
+      tableau de station en fin de minute: 
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 4
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 1
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4386.150000
+------------------------------------------------------------------------------
+temps de service = 9
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 2
+type client = Absolu     duree de service restante = 4
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 1
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 4
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 4
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 0
+      cout total = 4395.450000
+------------------------------------------------------------------------------
+temps de service = 10
+Nombre d'arrivées = 4
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 4
+type client = Absolu    duree de service restante = 4
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 5
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 1
+type client = Absolu     duree de service restante = 4
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 4
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 3
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 3
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 4
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 3
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4405.700000
+------------------------------------------------------------------------------
+temps de service = 11
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 5
+type client = Absolu    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 3
+type client = Absolu     duree de service restante = 3
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 4
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 3
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 2
+type client = Absolu    duree de service restante = 4
+type client = Absolu    duree de service restante = 2
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 2
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 2
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4417.575000
+------------------------------------------------------------------------------
+temps de service = 12
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 2
+type client = Absolu     duree de service restante = 4
+type client = Absolu     duree de service restante = 2
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 2
+type client = Absolu     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 2
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 3
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 1
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4428.200000
+------------------------------------------------------------------------------
+temps de service = 13
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Relatif    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 1
+type client = Absolu     duree de service restante = 3
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 1
+type client = Absolu     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 1
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 2
+type client = Absolu    duree de service restante = 0
+type client = Relatif    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 0
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4440.000000
+------------------------------------------------------------------------------
+temps de service = 14
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 4
+type client = Relatif    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 2
+type client = Relatif     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 1
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 3
+type client = Absolu    duree de service restante = 1
+type client = Relatif    duree de service restante = 4
+type client = Relatif    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 4
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 5
+      cout total = 4448.975000
+------------------------------------------------------------------------------
+temps de service = 15
+Nombre d'arrivées = 2
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 3
+type client = Absolu     duree de service restante = 1
+type client = Relatif     duree de service restante = 4
+type client = Relatif     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 4
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 5
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 2
+type client = Absolu    duree de service restante = 0
+type client = Relatif    duree de service restante = 3
+type client = Relatif    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 4
+      cout total = 4458.050000
+------------------------------------------------------------------------------
+temps de service = 16
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 2
+type client = Relatif     duree de service restante = 3
+type client = Relatif     duree de service restante = 2
+type client = Absolu     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 4
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 4
+type client = Relatif    duree de service restante = 2
+type client = Relatif    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 3
+      cout total = 4466.050000
+------------------------------------------------------------------------------
+temps de service = 17
+Nombre d'arrivées = 4
+      files d'attente en debut de minute : 
+type client = Relatif    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 1
+type client = Absolu     duree de service restante = 4
+type client = Relatif     duree de service restante = 2
+type client = Relatif     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 3
+      tableau de station en fin de minute: 
+type client = Absolu    duree de service restante = 0
+type client = Absolu    duree de service restante = 3
+type client = Relatif    duree de service restante = 1
+type client = Relatif    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 2
+type client = Relatif    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 2
+      cout total = 4475.075000
+------------------------------------------------------------------------------
+temps de service = 18
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Absolu     duree de service restante = 3
+type client = Relatif     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 2
+type client = Relatif     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 5
+type client = Ordinaire     duree de service restante = 2
+      tableau de station en fin de minute: 
+type client = Ordinaire    duree de service restante = 3
+type client = Absolu    duree de service restante = 2
+type client = Relatif    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 1
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 1
+type client = Relatif    duree de service restante = 2
+type client = Ordinaire    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 1
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4485.175000
+------------------------------------------------------------------------------
+temps de service = 19
+Nombre d'arrivées = 3
+      files d'attente en debut de minute : 
+type client = Absolu    duree de service restante = 2
+type client = Absolu    duree de service restante = 6
+type client = Ordinaire    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 6
+      stations au debut de la minute :
+type client = Ordinaire     duree de service restante = 3
+type client = Absolu     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 1
+type client = Absolu     duree de service restante = 1
+type client = Ordinaire     duree de service restante = 3
+type client = Ordinaire     duree de service restante = 1
+type client = Relatif     duree de service restante = 2
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 4
+type client = Ordinaire     duree de service restante = 1
+      tableau de station en fin de minute: 
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 1
+type client = Absolu    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 0
+type client = Absolu    duree de service restante = 0
+type client = Ordinaire    duree de service restante = 2
+type client = Absolu    duree de service restante = 5
+type client = Ordinaire    duree de service restante = 0
+type client = Relatif    duree de service restante = 1
+type client = Ordinaire    duree de service restante = 4
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 3
+type client = Ordinaire    duree de service restante = 0
+      files d'attente en fin de minute : 
+type client = Ordinaire    duree de service restante = 6
+      cout total = 4494.725000

@@ -1,0 +1,112 @@
+Exercice 1 
+
+	true || x == y 
+	true
+
+	let nom = "Cécile"; nom || "John Doe"; 
+	"Cécile"
+
+	let nom = ""; nom || "John Doe";
+	"John Doe"
+
+	let num = 5, denom = 0; denom != 0 && num / denom
+	false
+
+	let num = 5, denom = 3;
+	denom !=0 && num /denom
+	1.6666666666666667
+Exercice 2
+
+	function f() {   alert(x);   var x = 10; } f();
+	undefined
+	
+	function go() {   alert(x);   x = 10; } go(); alert(x);
+	ReferenceError: x is not defined
+	
+	function go() {   x = 10;   alert(x); } go(); alert(x)
+	10
+	10
+	
+	function boucle() {   for (var i = 0 ; i < 3 ; i++)     alert(i);   alert(i); } boucle();
+	0
+	1
+	2
+	3
+	
+	function boucle() {   for (let i = 0 ; i < 3 ; i++)     alert(i);   alert(i); } boucle();
+	0
+	1
+	2
+	ReferenceError: i is not defined
+Exercice 3
+
+		var x = 3; 
+		function changeX (action) {  
+			if (action) {    
+			___1___ x = Math.random();  
+		}  
+		return x; 
+		} 
+		console.log(changeX(___2___));
+		x; 
+		
+		___2___ est 	___1___ est remplacé par … 
+		remplacé par    rien 					var 				let 				const 
+		
+		false     		3						undefined			3					3
+						3						3					3					3
+							
+		true     		0.7991319357706378		0.05722962996775316 3					3
+						0.7991319357706378		3					3					3
+Exercice 4 
+		var str;
+	function demandeNombre()
+	{	str = prompt("Entrez un nombre :");
+		while(!isFinite(str.trim()))
+		{
+			str = prompt("Entrez un nombre :");
+		}
+	}
+Exercice 5
+	etape 1 
+		var reponse = prompt("Que vaut 36 * 0 ?");
+		if (reponse == 0)
+			alert("Bravo !");
+		else
+			alert("T’es nul !");
+			
+		pourquoi? :  le javascript va convertir le "vide" en 0 et donc la réponse sera 0
+	
+	etape 2
+		var reponse = prompt("Que vaut 36 * 0 ?");
+		if (reponse === 0)
+			alert("Bravo !");
+		else
+			alert("T’es nul !");
+		
+		pourquoi ? : javascript va comparé les types et donc va comparé une chaine avec un nombre
+	
+	etape 3 
+		en utilisant la fonction isFinite()
+Exercice 6
+	etape 1
+		
+        var pi = 3.14;
+		var vendredi = 13;
+		vendredi === pi
+	==>	false
+	
+	etape 2
+	
+		var nb1 = prompt("Entrez le premier nombre.");
+		var nb2 = prompt("Entrez le second nombre.");
+		console.log ("Le " + (nb1 >= nb2 ? "1er" : "2e")
+		 + " est plus grand (ou égal).");
+ 
+	==> non, si on rentre 47 et puis 5, 5 sera considéré comme le plus grand nombre car ils sont d'abord interpréter comme
+		chaine, donc on va regarder la lexicographie et 5 après le 4 de 47 donc 5 est plus grand	
+	etape 3 
+		
+		pour le premier test il faut etre sur que la variable reductionPourCents renvoie true pour qu'elle soit prise
+		et on ne peut pas utiliser cette technique si les valeurs admissible sont 0, chaine vide ou null
+		

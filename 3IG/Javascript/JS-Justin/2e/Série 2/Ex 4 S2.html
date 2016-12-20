@@ -1,0 +1,31 @@
+function f()
+ {  
+	alert(x);   
+	var x = 10; 
+ } 
+ f(); 			renvoie undefined
+ 
+ function go() 
+ { 
+	x = 10; 
+	alert(x); 
+	} 
+go(); 			renvoie 10
+alert(x); 		renvoie 10
+
+function go() 
+{   
+	alert(x);  
+	x = 10; 
+} 
+ go(); 			renvoie 10
+ alert(x); 		renvoie 10
+	VALEUR HISSER VERS LE HAUT
+	
+function boucle() 
+{  
+ for (var i = 0 ; i < 3 ; i++)     
+ alert(i);   
+ alert(i); 
+ } 
+ boucle();  	affiche juste 0,1,2,3

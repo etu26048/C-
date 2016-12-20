@@ -14,6 +14,7 @@ CREATE TABLE Customer (
     Prenom VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL,
     Motdepasse VARCHAR(20) NOT NULL,
+    Confirmpw VARCHAR(20) NOT NULL,
     Telephone VARCHAR(10),
     Datenaissance DATE,
     Civilite VARCHAR(4) NOT NULL,

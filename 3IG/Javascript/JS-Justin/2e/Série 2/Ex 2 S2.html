@@ -1,0 +1,49 @@
+<html>
+<!-- conversions chaine de caractère-->
+<p>undefined 			"undefined"
+null 				"null"
+37.5 				"37.5"
+true				"true"
+<!-- conversions nombres-->
+undefined 			NaN
+null 				0
+true 				1
+false 				0
+"\t\t\n" 			0
+"three" 			Nan
+"42 pommes" 		NaN
+"" 					0
+<!-- convertions booléens-->
+undefined			false
+null				false
+"true"				true
+"false"				true
+"\t\t\n"			true
+""					false
+"0"					true
+<!--opérateurs de conversions-->
+false * "35" 												0
+"254" / "" 													infinity
+42 + "1" 													"421"
+"42" + true 												42true
+"42" + (true + 0) 											"421"
+42 + (true + "0") 											"42true0"
+42 + true 													43
+42 + true + "1" 											"431"
+(true + (2 * true)) * ("35" / 7) 							15
+(true + 2 * "5") 											11
+1 == true 													true
+"0" != false 												false
+(25 == "25") + 9 											10
+"1" == (0 + true) 											true
+(("14" * 2) == ("20" + 8))									false
+true * "0" === false + "1" 									false
+420 < ("42" + true * "1") 									true
+"43" < "421" 												false
+"0" < ("0" * 421 == false) 									true
+true || x == y												true
+var nom = "Cécile" ; nom || "John Doe"; 					"Cécile"
+var nom = "" ; nom || "John Doe"; 							"john Doe"
+var num = 5, denom = 0; denom != 0 && num / denom 			false
+var num = 5, denom = 3; denom != 0 && num / denom 			1.666666666666667</p>
+</html>

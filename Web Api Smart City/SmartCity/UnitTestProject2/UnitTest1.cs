@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Data.Entity.Infrastructure;
-using Models;
+using SmartCity.Models;
 using System.Data.Entity;
 using System.Linq;
 
@@ -25,12 +24,22 @@ namespace UnitTestProject2
             return new SmartCityContext();
         }
 
+
         [TestMethod]
         public void HasOneHospital()
         {
             using (var context = GetContext())
             {
                 Assert.AreEqual(1, context.Hospital.ToList().Count);
+            }
+        }
+
+        [TestMethod]
+        public void HasOneHospitalInSchedule()
+        {
+            using (var context = GetContext())
+            {
+                Assert.AreEqual(1, context.Schedules.SqlQuery("select hospital_Id from schedule").ToList());
             }
         }
 

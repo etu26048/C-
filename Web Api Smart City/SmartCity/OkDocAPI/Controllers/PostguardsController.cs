@@ -9,25 +9,26 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class PostguardsController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Postguards
-        public IQueryable<Postguard> GetGuardPost()
+        public IEnumerable<Postguard> GetGuardPost()
         {
-            return db.GuardPost;
+            return db.GuardPost.Include("locality").ToList();
         }
 
         // GET: api/Postguards/5
         [ResponseType(typeof(Postguard))]
         public async Task<IHttpActionResult> GetPostguard(long id)
         {
-            Postguard postguard = await db.GuardPost.FindAsync(id);
+            Postguard postguard = await db.GuardPost.FirstAsync(p => p.Id == id);
             if (postguard == null)
             {
                 return NotFound();
@@ -37,6 +38,7 @@ namespace OkDocAPI.Controllers
         }
 
         // PUT: api/Postguards/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPostguard(long id, Postguard postguard)
         {
@@ -72,6 +74,7 @@ namespace OkDocAPI.Controllers
         }
 
         // POST: api/Postguards
+        [Authorize]
         [ResponseType(typeof(Postguard))]
         public async Task<IHttpActionResult> PostPostguard(Postguard postguard)
         {
@@ -80,13 +83,19 @@ namespace OkDocAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.GuardPost.Add(postguard);
+            if (await db.Locations.FindAsync(postguard.Locality.City, postguard.Locality.PostalCode) != null)
+            {
+
+                postguard.Locality = await db.Locations.FindAsync(postguard.Locality.City, postguard.Locality.PostalCode);
+                db.GuardPost.Add(postguard);
+            }
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = postguard.Id }, postguard);
         }
 
         // DELETE: api/Postguards/5
+        [Authorize]
         [ResponseType(typeof(Postguard))]
         public async Task<IHttpActionResult> DeletePostguard(long id)
         {
@@ -94,6 +103,26 @@ namespace OkDocAPI.Controllers
             if (postguard == null)
             {
                 return NotFound();
+            }
+
+            IEnumerable<Schedule> schedules = postguard.Schedule.ToList();
+            if (schedules != null)
+            {
+                foreach (var schedule in schedules)
+                {
+                    db.Schedules.Remove(schedule);
+                }
+
+            }
+
+            IEnumerable<Holiday> holidays = postguard.Holiday.ToList();
+            if (holidays != null)
+            {
+                foreach (var holiday in holidays)
+                {
+                    db.Holidays.Remove(holiday);
+                }
+
             }
 
             db.GuardPost.Remove(postguard);

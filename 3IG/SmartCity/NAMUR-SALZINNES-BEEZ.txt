@@ -1,0 +1,256 @@
+//Localisation
+
+//NANMUR 
+
+	//DOCTOR
+
+	insert into Doctors
+
+values(
+	'nicole,
+	'sorgeloos',
+	'081250770',
+	'rue des dames blanches ',
+	24,
+	'Namur',
+	5000
+);
+50,46729, 4,86721
+
+insert into Doctors
+
+values(
+	'Louis,
+	'Courtois',
+	'081730652',
+	'Chaussée de Waterloo ',
+	27,
+	'Namur',
+	5000
+);
+50,47115, 4,85048
+	//PHARMACIE
+
+
+
+
+
+
+
+//SALZINNES
+
+	//DOCTOR
+
+insert into Doctors
+
+values(
+	'Philippe',
+	'Henry',
+	'081737399',,
+	' Avenue Léopold II',
+	8,
+	'Salzinne',
+	5000
+);
+50,46671, 4,8524
+
+insert into Doctors
+
+values(
+	'Benoit',
+	'Gillet',
+	'081743979',
+	'Avenue du Cradinal Mercier',
+	49,
+	'Salzinne',
+	5000
+);
+
+50,46504, 4,85081
+insert into Doctors
+
+values(
+	'Thibert',
+	'Robillard',
+	'081742275',
+	'Avenue Léopold II',
+	2,
+	'Salzinne',
+	5000
+);
+50.46669, 4.85297
+insert into Doctors
+
+values(
+	'Anne',
+	'Godart',
+	'081743727',
+	'Place Wiertz',
+	8,
+	'Salzinne',
+	5000
+);
+50,46458, 4,84971
+insert into Doctors
+
+values(
+	'Philippe',
+	'Goffin',
+	'081743727',
+	'Place Wiertz',
+	8,
+	'Salzinne',
+	5000
+);
+50,46458, 4,84971
+insert into Doctors
+
+values(
+	'Myriam',
+	'Géhénot',
+	'081743155',
+	'Avenue reine Astrid',
+	70B,
+	'Salzinne',
+	5000
+);
+50,46303, 4,85337
+insert into Doctors
+
+values(
+	'Philippe',
+	'Fontaine',
+	'081743155',
+	'Avenue reine Astrid',
+	70B,
+	'Salzinne',
+	5000
+);
+50,46303, 4,85337
+	//PHARMACIE
+
+insert into Drugstores
+
+values(
+	false,
+	'null',
+	'null',
+	'A-L Sprumont',
+	'081737529',
+	'Rue Patenier',
+	67,
+	'Salzinnes',
+	5000
+);
+
+insert into Drugstores
+
+values(
+	false,
+	' http://www.epc-familia.be',
+	'null',
+	'Familia',
+	'081736820',
+	'Avenue du cardinal mercier',
+	4-6,
+	'Salzinne',
+	5000
+);
+50,46624, 4,85287
+insert into Drugstores
+
+values(
+	false,
+	'null',
+	'null',
+	'Mareschal A.',
+	'081738556',
+	'Rue de Patenier',
+	15,
+	'Beez',
+	5000
+);
+50,46396, 4,84786
+
+
+//BEEZ
+
+	//DOCTOR
+insert into Doctors
+
+values(
+	'Peter',
+	'Schraverus',
+	'081200922',
+	'Rue des Résistants ',
+	37,
+	'Beez',
+	5000
+);
+50,46738, 4,90829
+insert into Doctors
+
+values(
+	'Marie-flore',
+	'Simon',
+	'081260755',
+	' Rue du Mont ',
+	46,
+	'Beez',
+	5000
+);
+50,47628, 4,93128
+insert into Doctors
+
+values(
+	'Francis',
+	'Tancre',
+	'081221878',,
+	' Rue des Myrtilles ',
+	7,
+	'Beez',
+	5000
+);
+50,4732, 4,90655
+insert into Doctors
+
+values(
+	'Isabelle',
+	'Tancre',
+	'081221818',
+	' Rue de Namur ',
+	63,
+	'Beez',
+	5000
+);
+50,46772, 4,91772
+insert into Doctors
+
+values(
+	'Claudine',
+	'Jourdain',
+	'081260636',
+	'Rue des Myrtilles ',
+	8,
+	'Beez',
+	5000
+);
+50,47317, 4,90712
+
+
+	//PHARMACIE
+
+insert into Drugstores
+
+values(
+	false,
+	'null',
+	'null',
+	'Delcourt J.',
+	'081226077',
+	'Rue de Namur',
+	51,
+	'Beez',
+	5000
+);
+50,46731, 4,91651

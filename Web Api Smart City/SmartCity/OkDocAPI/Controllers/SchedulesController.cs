@@ -9,18 +9,19 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class SchedulesController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Schedules
-        public IQueryable<Schedule> GetSchedules()
+        public IEnumerable<Schedule> GetSchedules()
         {
-            return db.Schedules;
+            return db.Schedules.ToList();
         }
 
         // GET: api/Schedules/5
@@ -37,6 +38,7 @@ namespace OkDocAPI.Controllers
         }
 
         // PUT: api/Schedules/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutSchedule(long id, Schedule schedule)
         {
@@ -71,22 +73,85 @@ namespace OkDocAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Schedules
+        // POST: api/Schedules/id
+        [Authorize]
         [ResponseType(typeof(Schedule))]
-        public async Task<IHttpActionResult> PostSchedule(Schedule schedule)
+        [Route("api/Schedules/Hospital/{hospitalId}")]
+        public async Task<IHttpActionResult> PostScheduleForHospital(long hospitalId, [FromBody] Schedule schedule)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+            Hospital hospital = db.Hospital.Include(h => h.Schedule).FirstOrDefault(h => h.Id == hospitalId);
+            hospital.Schedule.Add(schedule);
             db.Schedules.Add(schedule);
-            await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = schedule.ID }, schedule);
+            await db.SaveChangesAsync();
+            return Created("api/Schedules/?Id=" + schedule.ID, schedule);
+           // return CreatedAtRoute("DefaultApi", new { id = schedule.ID }, schedule);
+        }
+
+        [Authorize]
+        [ResponseType(typeof(Schedule))]
+        [Route("api/Schedules/Drugstore/{drugstoreId}")]
+        public async Task<IHttpActionResult> PostScheduleForDrugstore(long drugstoreId, [FromBody] Schedule schedule)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Drugstore drugstore = db.Pharmacy.Include(d => d.Schedule).FirstOrDefault(d => d.Id == drugstoreId);
+            drugstore.Schedule.Add(schedule);
+            db.Schedules.Add(schedule);
+
+            await db.SaveChangesAsync();
+            return Created("api/Schedules/?Id=" + schedule.ID, schedule);
+            // return CreatedAtRoute("DefaultApi", new { id = schedule.ID }, schedule);
+        }
+
+        [Authorize]
+        [ResponseType(typeof(Schedule))]
+        [Route("api/Schedules/Doctors/{doctorId}")]
+        public async Task<IHttpActionResult> PostScheduleForDoctors(long doctorId, [FromBody] Schedule schedule)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Doctor doctor = db.Doctor.Include(h => h.Schedule).FirstOrDefault(h => h.Id == doctorId);
+            doctor.Schedule.Add(schedule);
+            db.Schedules.Add(schedule);
+
+            await db.SaveChangesAsync();
+            return Created("api/Schedules/?Id=" + schedule.ID, schedule);
+            // return CreatedAtRoute("DefaultApi", new { id = schedule.ID }, schedule);
+        }
+
+        [Authorize]
+        [ResponseType(typeof(Schedule))]
+        [Route("api/Schedules/Postguards/{postguardId}")]
+        public async Task<IHttpActionResult> PostScheduleForPostguard(long postguardId, [FromBody] Schedule schedule)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Postguard postguard = db.GuardPost.Include(h => h.Schedule).FirstOrDefault(h => h.Id == postguardId);
+            postguard.Schedule.Add(schedule);
+            db.Schedules.Add(schedule);
+
+            await db.SaveChangesAsync();
+            return Created("api/Schedules/?Id=" + schedule.ID, schedule);
+            // return CreatedAtRoute("DefaultApi", new { id = schedule.ID }, schedule);
         }
 
         // DELETE: api/Schedules/5
+        [Authorize]
         [ResponseType(typeof(Schedule))]
         public async Task<IHttpActionResult> DeleteSchedule(long id)
         {

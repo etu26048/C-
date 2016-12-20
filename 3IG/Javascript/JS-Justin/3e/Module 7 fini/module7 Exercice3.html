@@ -1,0 +1,97 @@
+Etape 1 
+	let nombre = 3.1415;
+	let chaîne = "Bonjour !";
+
+	nombre.toString()
+		"3.1415"
+	nombre.toFixed(6)
+		"3.141500"
+	nombre.toFixed(2)
+		"3.14"
+	chaîne.length
+		9
+	chaîne.charAt(2)
+		"n"
+	chaîne.charAt(5)
+		"u"
+	chaîne
+		"Bonjour !"
+	chaîne.startsWith("Bon")
+		true
+	chaîne.startsWith("B")
+		true
+	chaîne.startsWith("b")
+		false
+	autoboxing  = conversion d'un nombre/chaine en objet
+	
+Etape 2 
+	let autreNombre = 7;
+	let autreChaîne = "oui";
+
+	Object.getPrototypeOf(nombre) == Object.getPrototypeOf(autreNombre)
+		true
+	Object.getPrototypeOf(chaîne) == Object.getPrototypeOf(autreChaîne)
+		true
+	Object.getPrototypeOf(nombre) == Object.getPrototypeOf(chaîne)
+		false
+		
+	let protoNombre = Object.getPrototypeOf(nombre);
+	protoNombre.toString
+		function toString()
+	protoNombre.toFixed 
+		function toFixed()
+		
+	let protoString = Object.getPrototypeOf(chaîne);
+	protoString.charAt
+		function charAt()
+	protoString.startsWith
+		function startsWith()
+		
+Etape 3 
+
+	let porteBonheurChinois = new Number (8);
+	porteBonheurChinois
+		Number { 8 }
+		
+	new String ("Coucou")
+		String { "Coucou", 7 de plus… }
+	* associe chaque caractére a une valeur commencant à zéro (tableau)
+	(new String("Coucou"))[2]
+		"u"
+	Object.getPrototypeOf(porteBonheurChinois) == Number.prototype
+		true
+	Object.getPrototypeOf(nombre) == Number.prototype
+		true
+
+Etape 4 
+
+	let estPair = new Function("x", "return (x % 2 ==0);");
+	let fibo = new Array (1,1,2,3,5,8,13)
+	
+	prototype pour tout les tableaux : Array.prototype
+	prototype de toutes les fonction : object
+	
+	Object.getPrototypeOf([1,2,3]) == Object.getPrototypeOf(fibo);
+		true
+	Object.getPrototypeOf(isNaN) == Object.getPrototypeOf(estPair);
+		true	
+	Object.getPrototypeOf(fibo).constructor == …
+	
+	Object.getPrototypeOf(estPair(3)) == Object.getPrototypeOf(true);
+		true
+	Object.getPrototypeOf("true").constructor == …
+		
+	fibo instanceof Array
+		true
+	isFinite instanceof Object
+		true
+	isFinite(NaN) instanceof …
+		
+Etape 5
+il y'a de l'idée mais ne fonctionne pas
+
+Number.prototype.affichetoile = function(){
+	for(let i=0;i<this.Number;i++)
+{	
+let chaine += "*";
+}return chaine;};

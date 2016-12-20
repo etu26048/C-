@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Exemple en HTML</title>
+	</head>
+	<body>
+		<p>Une <strong>
+			<a href="https://fr.wikipedia.org/wiki/Arbre_enraciné">arborescence</a>
+		</strong> possède :</p>
+		 <ul>
+			<li>Une <em>racine</em> et</li>
+			<li>des <em>feuilles</em></li>
+		 </ul>
+	</body>
+	<!--
+	Etape 2 
+	
+	document
+		HTMLDocument → file:///C:/Users/Justin/Desktop/Atelier%208%20Exercice1.html
+	document.title = "ça change le titre";
+		"ça change le titre"
+	console.log(document.charset);		
+		UTF-8
+	alert(document.links[0].href);	
+		https://fr.wikipedia.org/wiki/Arbre_enracin%C3%A9
+		
+	Etape 3
+	
+	document.children[0]
+		<html>
+	
+	document.head == document.children[0].children[0]
+		true
+	document.body == document.children[0].children[1]
+		true
+		
+	Etape 4
+	
+	document.body.children
+		HTMLCollection [ <p>, <ul> ]
+	document.body.children[1].children[0] 
+		<li>
+	document.body.children[0].children[0].children[0] 
+		<a href="https://fr.wikipedia.org/wiki/Arbre_enraciné">
+	document.body.children[1].children[1].children[0]
+		<em>
+	document.body.children[1].children[0].innerHTML 
+		"Une <em>racine</em> et"
+	document.body.children[0].children[0].children[0].innerHTML 
+		"arborescence"		7
+	document.body.children[1].children[1].children[0].innerHTML 
+		"feuilles"
+		
+	Etape 5
+	
+	document.childNodes
+		NodeList [ <html> ]
+	document.childNodes[0] == document.children[0]
+		true
+		
+	Etape 6
+	
+	let li1 = document.body.children[1].children[0]
+	li1.innerHTML
+		"Une <em>racine</em> et"
+
+	li1.children
+		HTMLCollection [ <em> ]
+	li1.childNodes
+		NodeList [ #text "Une ", <em>, #text " et" ]
+		
+	children va donner l'élément fils de li tandis que childNodes va décrire les éléments
+	du noeud ciblé soit li 
+	
+	let ul = li1.parentNode;	
+	ul.children
+	HTMLCollection [ <li>, <li> ]
+	ul.childNodes
+	NodeList [ #text "
+				", <li>, #text "
+				", <li>, #text "
+			 " ]
+
+	Etape 7
+	
+	function afficheElem(elem)
+	{
+		alert('ELEMENT : '+ elem.nodeName +' ('+elem.children.length+' children et '+elem.childNodes.length+' childNodes)');
+		for(let i= 0 ; i < elem.childNodes.length; i++)
+		{
+			var chaine =" " ;
+       		chaine += elem.childNodes.item(i) );
+		};
+		alert("ChildNodes : " + chaine);
+	};
+		ELEMENT : UL (2 children et 5 childNodes)
+		fonctionne pas
+		
+	Etape 8
+	
+	document.getElementById("identificateur")   ==> recherche l'élément par son identificateur
+	document.getElementsByTagName("h1") 		==> recherche l'élément par son tag (balise)
+	document.getElementsByClassName("important") => recherche l'élément par sa classe
+	
+	for(let i of document.getElementsByTagName("li")){ i.style.color ="blue";};
+		"blue"
+	
+	Etape 9
+	
+	document.querySelector("#menu") 
+	document.querySelectorAll("a.exterieur") 
+	
+La première expression renvoie le nœud HTML du premier élément HTML qui correspond au sélecteur 
+donné (dans l’exemple, vu qu’on utilise un identificateur, il ne devrait y en n’avoir qu’un de toutes façons)
+
+La seconde expression renvoie la collection de tous les nœuds HTML correspondant au sélecteur
+(ici, tous les liens <a> de classe « exterieur »). 
+	
+	document.querySelectorAll("ul em")
+		NodeList [ <em>, <em> ]
+	document.querySelectorAll("li:first-of-type")
+		NodeList [ <li> ]
+	ul.getElementsByTagName("em")
+		HTMLCollection [ <em>, <em> ]
+	li1.querySelectorAll("em")
+		NodeList [ <em> ]
+	
+	-->
+</html>
+
+
+	

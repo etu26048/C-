@@ -1,0 +1,77 @@
+<html> 
+  <head>  
+	<meta charset="UTF-8"/>    
+	<title>Exemple en HTML</title>   
+  </head>  
+  <body>   
+	<h1>Section 1</h1>  
+	<div id="section1"> 
+		<p id="s1p2">Nous voici au 2<sup>e</sup> paragraphe et on ne connaît toujours pas le sujet.</p> 
+		<p id="s1p3">Et ce n’est pas le paragraphe numéro 3 qui en dira plus !</p>  
+		<p id="s1p4">Ce quatrième paragraphe est inutile !</p>     
+	</div> 
+	<h1>Section 2</h1>   
+	<div id="section2">   
+		<p id="s2p1">Un seul paragraphe dans la 2<sup>e</sup> section.</p>   
+	</div>  
+  </body>
+	<!--
+Etape 2 
+
+	let cible = document.getElementById("s1p4");
+	let s1 = cible.parentNode
+	s1.removeChild(cible);
+	s1.appendChild(cible);
+Etape 3 
+
+	cible  = document.querySelector("p:only-child")
+		<p id="s2p1">
+	let p2 = document.getElementById("s1p2");
+	
+	1er méthode 
+		s1.appendChild(cible)  				ajoute un élément a un autre endroit
+	2eme méthode	
+		s1.insertBefore(cible,p2);			ajoute un élément devant un autre
+	3eme méthode
+		s1.replaceChild(cible,p2);			remplace un élément par le nouveau 
+		
+Etape 4
+//création d'un nouveau noeud
+	let nouveauPara = document.createElement("p");
+	nouveauPara.innerHTML= "Voici le nouveau paragraphe ! ";
+		"Voici le nouveau paragraphe ! "
+	s1.appendChild(nouveauPara);
+	
+Etape 5 
+	
+	let paras = document.getElementsByTagName("p");
+	function afficheID (col) {   for (let elem of col) alert (elem.id); } 
+	afficheID(paras)
+		s2p1
+		s1p3
+		s1p4
+		" "
+	let s2 = document.getElementById("section2"); 
+	for (let para of paras) s2.appendChild(para)	déplace une partie des paragraphe
+	afficheID(paras)
+		s1p3
+		" "
+		s1p4
+		s2p1
+		
+	let tabParas= Array.of(...paras);
+	tabParas
+		Array [ <p#s1p3>, <p>, <p#s1p4>, <p#s2p1> ]
+	for (let para of tabParas) s2.appendChild(para);
+		déplace bien tout les éléments dans la section suivante
+	
+Etape 6
+	
+	for(let ind of tabPara.length) tabPara[ind].prepend((ind+1)+")")
+	
+	tabPara[0].prepend("1)");
+	
+	ajout manuel ==> tabPara[1].prepend("1)");
+	-->
+	
+</html>

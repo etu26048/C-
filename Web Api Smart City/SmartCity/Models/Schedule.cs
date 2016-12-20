@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models
+namespace SmartCity.Models
 {
     public class Schedule
     {
-        public Schedule()
-        {
-            this.Doctor = new HashSet<Doctor>();
-            this.Hospital = new HashSet<Hospital>();
-            this.Postguard = new HashSet<Postguard>();
-            this.Drugstore = new HashSet<Drugstore>();
-        }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { get; set; }
         [Required]
-        public DateTime StartHour { get; set; }
+        public TimeSpan StartHourAm { get; set; }
         [Required]
-        public DateTime Endhour { get; set; }
+        public TimeSpan EndhourAm { get; set; }
         [Required]
-        public Days days { get; set; }
-        //Ca ne fonctionne pas 
-        public virtual ICollection<Doctor> Doctor { get; set; }
-        public virtual ICollection<Hospital> Hospital { get; set; }
-        public virtual ICollection<Drugstore> Drugstore { get; set; }
-        public virtual ICollection<Postguard> Postguard { get; set; }
+        public TimeSpan StartHourPm { get; set; }
+        [Required]
+        public TimeSpan EndhourPm { get; set; }
+        [Required]
+        public string Day { get; set; }
+        /*public long HospitalID { get; set; }
+        [ForeignKey("HospitalID")]
+        public Hospital Hospital { get; set; }*/
     }
 }

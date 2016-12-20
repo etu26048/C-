@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="Ex1 S4.css"/> 
+		<script>
+		function draw (){
+			var monCanvas = document.getElementById("canvas1");
+			var sonContexte = monCanvas.getContext("2d");
+			//var mont = monCanvas.getContext("2d");
+			
+			/*sonContexte.strokeStyle ="rgba(226,45,226,0.3)";
+			sonContexte.lineWidth = 12;
+			sonContexte.translate(450,45);
+			sonContexte.rotate(45*Math.PI/180);
+			
+			
+			sonContexte.beginPath();
+			sonContexte.arc(110,44,20,0,2*Math.PI);
+			sonContexte.stroke();
+			sonContexte.save();
+			
+			sonContexte.translate(60,60);
+			sonContexte.fillStyle ="rgba(0,0,226,0.3)";
+			sonContexte.beginPath(); 
+			sonContexte.moveTo(10, 10);
+			sonContexte.lineTo(10, 110); 
+			sonContexte.lineTo(90, 110);
+			sonContexte.lineTo(90, 10); 
+			sonContexte.closePath(); 			
+			sonContexte.fill(); */
+		
+			sonContexte.fillText("Contour des lettres",100,300);
+			//sonContexte.fillText("Bonjour !",40,40);
+			
+			sonContexte.font ="italic bold 200px Arial";
+			}
+		</script>
+	</head>
+	<body onload="draw()">
+		<canvas id="canvas1" width="900" height="900"></canvas>
+	</body>
+</html>

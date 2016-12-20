@@ -1,0 +1,43 @@
+function plus2 (x) {return x+ 2}
+function plus3 (x) {return x*3 }
+function cube (x) {return x*x*x}
+
+function app2 (f,x) { return f(f(x)); } 
+app2(plus2, 3)
+===> (3+2 )+2
+function app2 (f,x) { return f(f(x)); } 
+app2(plus3,2)
+===> (2*3)*3
+function app2 (f,x) { return f(f(x)); } 
+app2(cube,2)
+===>  (2*2*2)*8*8)
+
+function afficheNfois(s,n)
+{ 
+	if(n == 0)
+	{
+		console.log("traitement impossible");
+	}
+	else
+	{
+		for(var i=0; i<n; i++)
+		{ 
+			console.log("affiche s : " + s);
+		}
+	}
+}
+
+function executeNfois(f,n)
+{ 
+	if(n == 0)
+	{
+		console.log("traitement impossible");
+	}
+	else
+	{
+		for(var i=0; i<n; i++)
+		{ 
+			console.log("affiche :" + f);
+		}
+	}
+}

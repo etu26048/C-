@@ -1,0 +1,7 @@
+Coûts pour les 20 premières minutes
+Total des arrivées: 88
+Total prix du temps d'inoccupation total: 415.2
+Total prix du temps d'occupation total: 208.0
+Total du nombre de priorités absolues: 175.0
+Total du nombre de priorités relatives:  6.375
+Total du nombre de priorités Ordinaires: 45.375

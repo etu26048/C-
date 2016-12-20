@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset ="UTF-8"/>
+	<script>
+		let nombre;
+		let Min;
+		let Max;
+		let somme = 0;
+		let compteur = 1;
+		
+		function demande()
+		{
+			nombre = prompt("Entrez une valeur : ");		
+			Min = Max = somme = nombre;
+			while(compteur <= 5)
+			{
+				let nbr;
+				document.write("<tr><td>"+compteur+"</td><td>"+nombre+"</td><td>"+Min+"</td><td>"+Max+"</td><td>"+somme+"</td></tr>");
+				nombre = prompt("Entrez une valeur : ");
+				Min = Math.min(Min, nombre);
+				Max = Math.max(Max, nombre);
+				somme = parseInt(somme)+parseInt(nombre);
+				compteur++;
+			}		
+		}
+		function entete()
+		{
+			document.write("<tr><th>No	</th><th>	Nombre</th><th>		Min</th><th>	Max</th><th>	Somme</th></tr>");
+		}
+	
+	
+	</script>
+	</head>
+	<body>
+		<table>
+		<script>entete()</script>
+		<script>demande()</script>
+		</table>
+		
+	</body>
+</html>

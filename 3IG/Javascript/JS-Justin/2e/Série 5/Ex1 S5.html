@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html> 
+  <head>  
+	<meta charset="ISO-8859-1"/>  
+	<script>       
+		function crie () {alert("Bouh!");}   
+	</script>    
+  </head>  
+  <body>   
+	<p>Si tu <a href="javascript:crie();">cliques</a>, 
+		alors je <strong>crie</strong> ! 
+	</p>  
+  </body> 
+</html> 
+function affiche (elem) 
+{   
+var lgChildren = elem.children.length;   
+var lgChildNodes = elem.childNodes.length; 
+  var msg = "ELEM : " + elem.nodeName + "\n";  
+  msg += lgChildren + " children\n";  
+  msg += lgChildNodes + " childNodes\n"; 
+  msg += "Childnodes :";   for (var i = 0 ; i < lgChildNodes ; i++)  
+  msg += " " + elem.childNodes[i].nodeName;  
+  console.log(msg);   for (i = 0 ; i < lgChildren ; i++)   
+
+  affiche(elem.children[i]); } 
+
+affiche(p);
+ReferenceError: p is not defined
+affiche(html);
+ReferenceError: html is not defined
+var elemGras = document.getElementsByTagName("strong")[0];
+
+affiche(elemGras);
+
+affiche(elemGras)
+
+var elemPara = document.getElementsByTagName("p")[0];
+
+affiche(elemPara)
+
+affiche(document.body);
+
+var nbJours = 7;
+
+alert(window.nbJours);
+
+window.affiche(window.elemGras);

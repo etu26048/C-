@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8/">
+	
+	<link rel ="stylesheet" type="text/css" href="module6_Ex1.css">
+	
+	</head>
+	<body>
+	<h1 id = "titre"> Titre de cette page </h1>
+	<p id ="para"> Paragraphe de cette page</p>
+	<!-- 
+	Etape 1 
+
+	let titreHTML = document.getElementById("titre");
+
+	let paraHMTL = document.getElementById("para");
+
+	titreHTML
+	<h1 id="titre">
+	
+	paraHTML.style.backgroundColor = "blue";
+		"blue"
+	paraHTML.style.color = "white"; 
+		"white"
+	paraHTML.innerHTML += " Et la suite ?"; 
+		" Paragraphe de cette page Et la suite ?"
+	
+	Etape 2 
+	
+	let titreHTML = document.getElementById("titre");
+
+	let elem = {cible:titreHTML,
+		changeTxt : function (txt)
+		{
+			return this.cible;
+		}
+	};
+		elem.cible.nodeName
+			"H1"
+		elem.changeTxt("My title");
+			<h1 id="titre">
+			
+		elem = { ajouteTexte : function(txt) 
+				{
+					document.write("<p>"+ txt+ "</p>");
+				}	
+			};
+		Object { ajouteTexte: elem.ajouteTexte() }
+	Etape 3
+		let paraHTML = document.getElementById("para");
+
+		paraHTML.style.backgroundColor = "blue";
+		"blue"
+		
+		let elem = {cible:paraHTML,
+			changeTxt : function (txt)
+			  {
+					return this.cible;
+			   }
+			};
+		elem.cible.nodeName
+		"p"
+		elem.changeTxt("my blah-blah");
+		<p id="para" style="background-color: blue;">
+	
+	
+		elem = {
+		elem = { changeCouleur : function (couleur) {
+		this.cible.style.color = couleur;}};
+	-->
+	</body>
+</html>

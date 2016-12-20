@@ -1,0 +1,21 @@
+#pop { 
+  font-family: "comic sans ms"; 
+  border: 2px solid gray; 
+  border-collapse: collapse; 
+} 
+#pop tr:last-child { 
+  background-color: beige; 
+  border-top: 1px solid gray; 
+} 
+#pop th { 
+  border-bottom: 2px solid gray; 
+} 
+#pop th, #pop td { 
+  padding: 4px; 
+} 
+#pop tr td:nth-child(2) { 
+  color: blue; 
+} 
+#pop tr td:nth-child(3) { 
+  color: red; 
+}

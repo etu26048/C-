@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>Quelques peintures</title>  
+		<meta charset="utf-8" />
+		<script>
+			
+			window.onload = function (){
+				let elem = créePeinture("escaliers.jpg");				
+			}		
+			function créePeinture(src){
+				let imag = document.createElement("IMG");// ici je créé l'élément <img></img>
+				imag.src = src;							// on lui associe la source de l'image
+				imag.classList.add("peinture");			// on lui attribue la classe peinture
+				//imag.mouseover.toggle(changBord);
+				document.getElementById("peintures").appendChild(imag);
+			}
+			function changBord()
+			{
+				var cbl = document.getElementsByClassName("peinutre");
+				cbl.style.border = " 5px solid yellow";
+			}
+		</script>
+		<style>   
+		#peintures {       
+			border: 1px solid green; 
+			background-color: lightgreen;   
+			padding: 0;      
+			display: flex;    
+			align-items: center;    
+			margin-bottom: 0;    
+		}    
+		.peinture{  
+			border: 2px solid black; 
+			margin: 4px;      
+			width: 150px;  
+		}    
+		#commentaire {  
+			margin-top: 0;  
+			border: 1px solid green;  
+			background-color: lemonchiffon;  
+			min-height: 80px;     
+			padding: 8px;      
+			display: flex;     
+			flex-direction: column;    
+			justify-content: center;    
+		}
+		</style>
+		
+	</head> 
+	<body>   
+		 <div id="peintures"></div> 
+		<div id="commentaire"><p id="pcommentaire"></p></div> 
+	</body> 
+	<!--
+Etape 2 
+	 <div id="peintures">
+		 <script>
+			Let elem = créePeinture("escaliers.jpg"); 
+			document.getElementById("peintures").appendChild(elem);
+		</script>
+	</div> 
+Etape 3
+	création dans la console firefox
+	
+		let imag = document.createElement("IMG");
+		imag.src = "escaliers.jpg";
+		document.getElementById("peintures").appendChild(imag);
+		imag.className = "peinture";
+		
+	création dans le fichier html
+
+		window.onload = function (){
+			let elem = créePeinture("escaliers.jpg");				
+		}		
+		function créePeinture(src){
+			let imag = document.createElement("IMG");// ici je créé l'élément <img></img>
+			imag.src = src;							// on lui associe la source de l'image
+			imag.classList.add("peinture");			// on lui attribue la classe peinture
+			document.getElementById("peintures").appendChild(imag);
+		}
+		
+Etape 4
+	-->
+</html>

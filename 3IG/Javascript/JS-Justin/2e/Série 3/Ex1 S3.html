@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+	<html>  
+		<head>    
+		<meta charset="ISO-8859-1"/>  
+		<style>       
+			.cadrestd {     
+				background-color: #EFFFEF;  
+				border: 1px solid blue;     
+				padding: 4px;       
+			}     
+		</style>  
+		
+		</head> 
+		<body>    
+			<div id="cadre" class="cadrestd">  
+				<p>Le cadre commence ici.</p>   		
+			</div>   
+		</body> 
+</html>
+var p1 = {};
+p1.texte = "bonjour";
+p1.couleur = "purple";
+p1.gras = true;
+p1.ajoute =  function () { document.getElementById("cadre").innerHTML += "<p style='color:this.couleur;font-weight:this.gras'>"+ this.texte+" </p>";};
+p1.ajoute();
+
+var salle1 = {};
+salle1["nom"] = "cuisine";
+salle1["largeur"] = "3";
+salle1["longueur"] = "4";
+salle1["hauteur"] = "3";
+
+var salle2 = {
+	"nom" : "chambre",
+	"largeur" : "4",
+	"longueur" : "4",
+	"hauteur" : "3",
+};
+
+var salle3 = {};
+	salle3.nom = "salon";
+	salle3.largeur = "6";
+	salle3.longueur = "8";
+	salle3.hauteur = "4";
+	salle3.__proto__= protoSalle;
+	
+var surfaceSol = function (s){return s.largeur*s.longueur;}
+var surfaceMurs = function (s){return s.largeur*s.longueur*s.hauteur;}
+
+function Tarif(coutPLancher, coutTapisserie){ this.coutPLancher = coutPLancher; this.coutTapisserie = coutTapisserie;}
+
+var tarrif1 = new Tarif(101.00,37.50);
+var tarrif2 = new Tarif(53.30,7.80);
+
+var coutDeco = function (salle,tarif)
+{
+cp= (salle.largeur*salle.longueur)* tarif.coutPLancher;
+ct= (salle.largeur*salle.longueur*salle.hauteur)*tarif.coutTapisserie;
+return cp + " " + ct + " "+ (cp+ct);
+}
+
+var protoSalle = {};
+
+salle1.__proto__= protoSalle;
+salle2.__proto__= protoSalle;
+salle3.__proto__= protoSalle;
+
+protoSalle.cout = function(tarif)
+{
+	CP = (this.largeur*this.longueur)*tarif.coutPLancher;
+	CT = (this.largeur*this.longueur*this.hauteur)*tarif.coutTapisserie;
+	return CP+CT
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

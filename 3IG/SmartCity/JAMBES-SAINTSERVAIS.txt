@@ -1,0 +1,197 @@
+////////////////////////////////////JAMBES/////////////////////////////
+
+
+insert into Doctors
+
+values(
+	'Marie-Hélène',
+	'Onclinx',
+	'0494336562',
+	null,
+	null,
+	'Rue d’Enhaive',
+	44,
+	'Jambes',
+	5100
+);
+
+insert into Doctors
+
+values(
+	'Vinh-Quang',
+	'Hoang',
+	'081306557',
+	null,
+	null,
+	'Avenue Gouverneur Bovesse',
+	17,
+	'Jambes',
+	5100
+);
+
+insert into Doctors
+
+values(
+	'Sebahat',
+	'Dersan',
+	'081306283',
+	null,
+	null,
+	'Rue de Coppin',
+	51,
+	'Jambes',
+	5100
+);
+
+
+insert into Drugstores
+values(
+	false,
+	null,
+	null,
+	'Pharmacie Blaimont Ass',
+	'081301236',
+	null,
+	null,
+	'Rue de Dave',
+	398,
+	'Jambes',
+	5100
+);
+
+insert into Drugstores
+values(
+	false,
+	null,
+	null,
+	'Pharmacie Chapelle/Guy',
+	'081302828',
+	null,
+	null,
+	'Avenue Prince de Liège',
+	171,
+	'Jambes',
+	5100
+);
+
+insert into Drugstores
+values(
+	false,
+	'www.pharmacieduchateau.be',
+	null,
+	'Pharmacie Duchâteau',
+	'081301205',
+	'081304759',
+	'info@pharmacieduchateau.be',
+	'Avenue du Bougmestre Jean Materne',
+	92,
+	'Jambes',
+	5100
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////SAINT-SERVAIS/////////////////////////////
+
+insert into Doctors
+
+values(
+	'Nicolas',
+	'Dechamps',
+	'081730834',
+	'081730833',
+	null,
+	'Rue Muzet',
+	11,
+	'Saint-Servais',
+	5002
+);
+
+insert into Doctors
+
+values(
+	'Nadine',
+	'Nezer',
+	'081734754',
+	'081734781',
+	null,
+	'Rue Danhaive',
+	21,
+	'Saint-Servais',
+	5002
+);
+
+insert into Doctors
+
+values(
+	'Charles',
+	'Michiels',
+	'0495222200',
+	null,
+	null,
+	'Rue de Beau Vallon',
+	296,
+	'Saint-Servais',
+	5002
+);
+
+
+insert into Drugstores
+values(
+	false,
+	'www.multipharma.be',
+	null,
+	'Multipharma',
+	'081733244',
+	'081735982',
+	'mm0478@multipharma.be',
+	'Rue de Gembloux',
+	183,
+	'Saint-Servais',
+	5002
+);
+
+insert into Drugstores
+values(
+	false,
+	'www.multipharma.be',
+	null,
+	'Multipharma',
+	'081735873',
+	'081735873',
+	'mm0068@multipharma.be',
+	'Chaussée de Waterloo',
+	174,
+	'Saint-Servais',
+	5002
+);
+
+insert into Drugstores
+values(
+	false,
+	null,
+	null,
+	'Pharmacie Hautecoeur',
+	'081730335',
+	null,
+	null,
+	'Chaussée de Waterloo',
+	383,
+	'Saint-Servais',
+	5002
+);

@@ -9,18 +9,19 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class LocalitiesController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Localities
-        public IQueryable<Locality> GetLocations()
+        public IEnumerable<Locality> GetLocations()
         {
-            return db.Locations;
+            return db.Locations.ToList();
         }
 
         // GET: api/Localities/5
@@ -37,6 +38,7 @@ namespace OkDocAPI.Controllers
         }
 
         // PUT: api/Localities/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutLocality(string id, Locality locality)
         {
@@ -72,6 +74,7 @@ namespace OkDocAPI.Controllers
         }
 
         // POST: api/Localities
+        [Authorize]
         [ResponseType(typeof(Locality))]
         public async Task<IHttpActionResult> PostLocality(Locality locality)
         {
@@ -102,6 +105,7 @@ namespace OkDocAPI.Controllers
         }
 
         // DELETE: api/Localities/5
+        [Authorize]
         [ResponseType(typeof(Locality))]
         public async Task<IHttpActionResult> DeleteLocality(string id)
         {

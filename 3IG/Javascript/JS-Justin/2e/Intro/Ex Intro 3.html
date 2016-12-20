@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="Ex Intro 3.css"/> 
+		<script>
+		var nombre;
+		var nombre = prompt("Entrez un nombre",0);
+		
+		function affichage(nombre){	
+			document.write("<p class='nombre'> ce nombre est : "+ nombre + "</p>");
+		}
+		
+		function tableau(nombre){
+			document.write("<th>Nombre</th><th>Facteur</th><th>Résultat</th>");
+			for ( var i = 1; i < 11; i++)
+			{
+				document.write("<tr><td>"+ nombre + "</td><td>"+ i +"</td><td>"+ nombre*i +"</td></tr>");				
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<p>Voici le nombre entré :  </p>
+		<p>le nombre est : + "affichage(nombre);"</p>
+		
+		<table onload="tableau();"></table>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>  
+	<head> 
+		<meta charset="UTF-8"/> 
+	</head>  
+	<body>  
+		<p>Un tiramisu pour 8 personnes :</p>  
+		<ul>     
+			<li data-key="oeufs">3 gros oeufs</li>   
+			<li data-key="sucre">100g de sucre</li> 
+			<li data-key="sucre vanillé">1 sachet de sucre <strong>vanillé</strong></li>   
+			<li id="masca" data-key="mascarpone">250g de mascarpone</li> 
+			<li data-key="biscuits">24 <i>biscuits</i> à la cuillère</li> 
+			<li data-key="café">1/2 litre de café noir <strong>non sucré</strong></li>  
+			<li data-key="cacao">30g de poudre de cacao <strong>amer</strong></li>   
+		</ul>
+	</body>
+	<!--
+Etape 1
+	let b = document.body;
+Etape 2
+	obtenir la première phrase du body
+	
+	 b.children[0].innerHTML					ok
+	 b.children[1].innerHTML 					cible ul
+	 b.childNodes[0].innerHTML					cible p
+	 b.childNodes[1].innerHTML 				ok
+	 b.firstChild.innerHTML 					cible p
+	 b.firstElementChild.innerHTML				ok
+	 b.getElementsByTagName("p").innerHTML 	cible p
+	 b.querySelector("p").innerHTML			ok
+Etape 3
+
+	b.children[1].children[1].innerHTML
+	b.childNodes[3].childNodes[3].innerHTML
+	
+	b.firstElementChild.nextElementSibling.children[1].innerHTML
+Etape 4
+
+	let masca = document.getElementById("masca");
+	masca.previousElementSibling.children[0].innerHTML
+		"vanillé"	
+	masca.parentNode.getElementsByTagName("strong")[0].innerHTML
+		"vanillé"
+		
+Etape 5 
+
+	b.children[1].childNodes[9].children[0].innerHTML 
+		"biscuits"
+	masca.parentNode.lastElementChild.lastElementChild.innerHTML 
+		"amer"
+	b.getElementsByTagName("strong")[1].parentNode.innerHTML 
+		"1/2 litre de café noir <strong>non sucré</strong>"
+	b.getElementsByTagName("strong")[1].parentNode.textContent 
+		"1/2 litre de café noir non sucré"
+	-->
+	
+ </html> 

@@ -1,0 +1,105 @@
+nombre de station = 15
+		cout pour les ordinaires : 7890.375000
+		cout pour les relatifs : 715.700000
+		cout pour les absolus : 2242.500000
+		cout pour les stations occupées : 7159.000000
+		cout pour les stations libres : 24.600000
+  cout total = 18032.175000
+nombre de station = 16
+		cout pour les ordinaires : 4127.625000
+		cout pour les relatifs : 672.775000
+		cout pour les absolus : 2330.000000
+		cout pour les stations occupées : 7225.000000
+		cout pour les stations libres : 272.700000
+  cout total = 14628.100000
+nombre de station = 17
+		cout pour les ordinaires : 3604.875000
+		cout pour les relatifs : 609.875000
+		cout pour les absolus : 2538.125000
+		cout pour les stations occupées : 7235.000000
+		cout pour les stations libres : 554.700000
+  cout total = 14542.575000
+nombre de station = 18
+		cout pour les ordinaires : 3411.375000
+		cout pour les relatifs : 592.450000
+		cout pour les absolus : 2660.625000
+		cout pour les stations occupées : 7237.000000
+		cout pour les stations libres : 841.800000
+  cout total = 14743.250000
+nombre de station = 19
+		cout pour les ordinaires : 3325.500000
+		cout pour les relatifs : 582.250000
+		cout pour les absolus : 2715.625000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 1130.100000
+  cout total = 14989.475000
+nombre de station = 20
+		cout pour les ordinaires : 3296.625000
+		cout pour les relatifs : 582.250000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 1418.100000
+  cout total = 15255.475000
+nombre de station = 21
+		cout pour les ordinaires : 3286.125000
+		cout pour les relatifs : 582.250000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 1706.100000
+  cout total = 15532.975000
+nombre de station = 22
+		cout pour les ordinaires : 3282.000000
+		cout pour les relatifs : 581.825000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 1994.100000
+  cout total = 15816.425000
+nombre de station = 23
+		cout pour les ordinaires : 3281.250000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 2282.100000
+  cout total = 16103.250000
+nombre de station = 24
+		cout pour les ordinaires : 3280.875000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 2570.100000
+  cout total = 16390.875000
+nombre de station = 25
+		cout pour les ordinaires : 3280.875000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 2858.100000
+  cout total = 16678.875000
+nombre de station = 26
+		cout pour les ordinaires : 3280.875000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 3146.100000
+  cout total = 16966.875000
+nombre de station = 27
+		cout pour les ordinaires : 3280.875000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 3434.100000
+  cout total = 17254.875000
+nombre de station = 28
+		cout pour les ordinaires : 3280.875000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 3722.100000
+  cout total = 17542.875000
+nombre de station = 29
+		cout pour les ordinaires : 3280.875000
+		cout pour les relatifs : 581.400000
+		cout pour les absolus : 2722.500000
+		cout pour les stations occupées : 7236.000000
+		cout pour les stations libres : 4010.100000
+  cout total = 17830.875000

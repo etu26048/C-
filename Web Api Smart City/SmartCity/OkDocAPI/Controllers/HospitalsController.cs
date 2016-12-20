@@ -9,25 +9,27 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class HospitalsController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Hospitals
-        public IQueryable<Hospital> GetHospital()
+        public IEnumerable<Hospital> GetHospital()
         {
-            return db.Hospital;
+            return db.Hospital.Include("locality").ToList();
         }
 
         // GET: api/Hospitals/5
         [ResponseType(typeof(Hospital))]
-        public async Task<IHttpActionResult> GetHospital(string id)
+        public async Task<IHttpActionResult> GetHospital(long id)
         {
-            Hospital hospital = await db.Hospital.FindAsync(id);
+            //Hospital hospital = await db.Hospital.FindAsync(id);
+            Hospital hospital = await db.Hospital.Include("locality").FirstAsync(h => h.Id == id);
             if (hospital == null)
             {
                 return NotFound();
@@ -37,8 +39,9 @@ namespace OkDocAPI.Controllers
         }
 
         // PUT: api/Hospitals/5
+        [Authorize]
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutHospital(string id, Hospital hospital)
+        public async Task<IHttpActionResult> PutHospital(long id, [FromBody]Hospital hospital)
         {
             if (!ModelState.IsValid)
             {
@@ -50,7 +53,21 @@ namespace OkDocAPI.Controllers
                 return BadRequest();
             }
 
-            db.Entry(hospital).State = EntityState.Modified;
+            //db.Entry(hospital).State = EntityState.Modified;
+            var entity = db.Hospital.Find(id);
+            entity.Locality = await db.Locations.FindAsync(hospital.Locality.City, hospital.Locality.PostalCode);
+            entity.Name = hospital.Name;
+            entity.Fax = hospital.Fax;
+            entity.Email = hospital.Email;
+            entity.EmergencyPhone = hospital.EmergencyPhone;
+            entity.latitude = hospital.latitude;
+            entity.longitude = hospital.longitude;
+            entity.Number = hospital.Number;
+            entity.Street = hospital.Street;
+            entity.PhoneNumber = hospital.PhoneNumber;
+            entity.URLWebSite = hospital.URLWebSite;
+            //entity.Schedule = hospital.Schedule;
+            entity.RowVersion = hospital.RowVersion;
 
             try
             {
@@ -72,43 +89,41 @@ namespace OkDocAPI.Controllers
         }
 
         // POST: api/Hospitals
+        [Authorize]
         [ResponseType(typeof(Hospital))]
-        public async Task<IHttpActionResult> PostHospital(Hospital hospital)
+        public async Task<IHttpActionResult> PostHospital([FromBody] Hospital hospital)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            db.Hospital.Add(hospital);
-
-            try
+            if (await db.Locations.FindAsync(hospital.Locality.City,hospital.Locality.PostalCode) != null)
             {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (HospitalExists(hospital.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
+                hospital.Locality = await db.Locations.FindAsync(hospital.Locality.City, hospital.Locality.PostalCode);
+                db.Hospital.Add(hospital);  
+            }
+            await db.SaveChangesAsync();
             return CreatedAtRoute("DefaultApi", new { id = hospital.Id }, hospital);
         }
 
         // DELETE: api/Hospitals/5
+        [Authorize]
         [ResponseType(typeof(Hospital))]
-        public async Task<IHttpActionResult> DeleteHospital(string id)
+        public async Task<IHttpActionResult> DeleteHospital(long id)
         {
             Hospital hospital = await db.Hospital.FindAsync(id);
             if (hospital == null)
             {
                 return NotFound();
+            }
+            IEnumerable<Schedule> schedules = hospital.Schedule.ToList();
+            if(schedules != null)
+            {
+                foreach(var schedule in schedules)
+                {
+                    db.Schedules.Remove(schedule);
+                }
             }
 
             db.Hospital.Remove(hospital);
@@ -126,7 +141,7 @@ namespace OkDocAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool HospitalExists(string id)
+        private bool HospitalExists(long id)
         {
             return db.Hospital.Count(e => e.Id == id) > 0;
         }

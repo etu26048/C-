@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://www.w3schools.com/js/tryit.asp?filename=tryjs_events_mouseover -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Quelques peintures</title>  
+  
+  <script>
+   
+   window.onload = function (){
+    let elem = créePeinture("escaliers.jpg");    
+   }  
+   function créePeinture(src){
+    let imag = document.createElement("IMG");// ici je créé l'élément <img></img>
+    imag.src = src;       // on lui associe la source de l'image
+    imag.classList.add("peinture");   // on lui attribue la classe peinture
+    //imag.mouseover.toggle(changBord);
+    document.getElementById("peintures").appendChild(imag);
+   }
+   function changBord()
+   {
+    var cbl = document.getElementsByClassName("peinutre");
+    cbl.style.border = " 5px solid yellow";
+   }
+  </script>
+  <style>   
+  #peintures {       
+   border: 1px solid green; 
+   background-color: lightgreen;   
+   padding: 0;      
+   display: flex;    
+   align-items: center;    
+   margin-bottom: 0;    
+  }    
+  .peinture{  
+   border: 2px solid black; 
+   onmouseout  : border: 2px solid yellow;  
+   margin: 4px;      
+   width: 150px;  
+  }    
+  #commentaire {  
+   margin-top: 0;  
+   border: 1px solid green;  
+   background-color: lemonchiffon;  
+   min-height: 80px;     
+   padding: 8px;      
+   display: flex;     
+   flex-direction: column;    
+   justify-content: center;    
+  }
+  </style>
+  
+ </head> 
+ <body contenteditable="false">   
+   <div id="peintures"><img src="./escaliers.jpg" class="peinture"></div> 
+  <div id="commentaire"><p id="pcommentaire"></p></div> 
+ 
+
+
+</body></html>

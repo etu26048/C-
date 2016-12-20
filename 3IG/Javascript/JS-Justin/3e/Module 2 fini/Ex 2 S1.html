@@ -1,0 +1,53 @@
+﻿<!--Wilmet justin-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8/">
+		<script>
+			function changeDyn(txt)
+			{
+				<!--let cible = document.getElementById("dyna");-->
+				<!--cible.innerHTML = txt;-->
+				document.getElementById("dyna").innerHTML = txt;
+			}
+		</script>
+		<script>
+			var dynMinuscule = true;
+			function toggleDyn()
+			{			
+			dynMinuscule ? changeDyn('DYNAMIQUE') : changeDyn('dynamique');
+			<!--dynMinuscule = dynMinuscule ? false : true ;-->			
+			dynMinuscule = !dynMinuscule;
+			}
+		</script>
+	</head>
+	<body>
+	<script>
+		let maintenant = new Date (); 
+		let h = maintenant.getHours();
+		let m = maintenant.getMinutes();
+		document.write('<p> Bonjour, il est '+ h + 'h'+m+'.');
+		document.write('<p> Bonjour, il est '+ maintenant+'.');
+	</script>
+		<p><strong>Javascript </strong>est un langage de scripts compris
+		par la plupart des navigateurs web. Ce sont ces derniers qui 
+		exécutent le code Javascript.</p>
+		
+		<p>Grâce à Javascript, les pages web deviennent
+		
+		<ul>
+			<li>interactives,</li>
+			<li>plus intéressantes,</li>
+			<li>plus <span id ='dyna' onclick = "toggleDyn();">dynamique</span>!</li>
+		</ul>
+		</p>
+		
+		<script> alert ("cliquez sur ok.");</script>
+		<script> document.write('<h2>Les origines de Javascript</h2>')</script>
+		
+		<p>Javascript est un standard construit par le 
+		<a href='http://www.w3c.org'>WWW Consortium</a>.</p>
+		<p>Javascript est un standard géré par la 
+		<a href=' http://www.ecma-international.org/'>ECMA</a>.</p> 
+	</body>
+</html>	

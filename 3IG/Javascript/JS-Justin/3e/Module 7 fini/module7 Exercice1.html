@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		#cadre {
+		background-color: #EFFFEF;
+		border: 1px solid blue;
+		padding: 4px;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="cadre">
+		<p>Le cadre commence ici.</p>
+	</div>
+	</body>
+
+<!--
+Etape 1 
+
+	ajout de texte 1er méthode
+		let cadreHTML = document.getElementById("cadre");
+		cadreHTML.innerHTML += "<p>Nouveau paragraphe</p>";
+		
+		"<p>Le cadre commence ici.</p>
+		<p>Nouveau paragraphe</p>"
+		
+	ajout de texte 2eme méthode
+		document.getElementById("cadre").innerHTML +="<p>Nouveau paragraphe</p>";
+		
+		"<p>Le cadre commence ici.</p>
+		<p>Nouveau paragraphe</p><p>Nouveau paragraphe</p>"
+Etape 2
+
+	let p1 = {};
+	p1.texte = "Quelle prétention de prétendre que l’informatique est récente : Adam et Ève avaient déjà un Apple!";
+		"Quelle prétention de prétendre que l’informatique est récente : Adam et Ève avaient déjà un Apple!"
+	p1.auteur = "Anonyme";
+		"Anonyme"
+	p1.couleur ="purple";
+		"purple"
+	p1.gras = true;
+		true
+	let p2 = {};
+	p2.texte = "Cookie: anciennement petit gâteau sucré qu’on acceptait avec plaisir. Aujourd’hui: petit fichier informatique drôlement salé qu’il faut refuser avec véhémence."
+		"Cookie: anciennement petit gâteau sucré qu’on acceptait avec plaisir. Aujourd’hui: petit fichier informatique drôlement salé qu’il faut refuser avec véhémence."
+	p2.auteur = "Luc Fayard";
+		"Luc Fayard"
+	p2.couleur = "darkgreen";
+		"darkgreen"
+	p2.gras = false;
+		false
+		
+	p1
+	Object { texte: "Quelle prétention de prétendre que …", auteur: "Anonyme", couleur: "purple", gras: true }
+	p2
+	Object { texte: "Cookie: anciennement petit gâteau s…", auteur: "Luc Fayard", couleur: "darkgreen", gras: false }
+
+test du toSring en javascript
+	p1.toString();
+		"[object Object]"
+	"Hello" + p2;
+		"Hello[object Object]"	
+		
+Etape 3 
+
+	let protoPara= {};
+	protoPara
+	Object {  } ==> vide sauf __proto__ qui est mis par défaut
+	
+	protoPara.toString = function(){ return  this.texte + " (" + this.auteur + ")";};
+	function protoPara.toString()	
+	
+	Object.setPrototypeOf(p1, protoPara);
+	Object { texte: "Quelle prétention de prétendre que …", auteur: "Anonyme", couleur: "purple", gras: true }
+	Object.setPrototypeOf(p2, protoPara);
+	Object { texte: "Cookie: anciennement petit gâteau s…", auteur: "Luc Fayard", couleur: "darkgreen", gras: false }
+	
+	p1.toString();
+	"Quelle prétention de prétendre que l’informatique est récente : Adam et Ève avaient déjà un Apple! (Anonyme)"
+	"Hello" + p2;
+	"HelloCookie: anciennement petit gâteau sucré qu’on acceptait avec plaisir. Aujourd’hui: petit fichier informatique drôlement salé qu’il faut refuser avec véhémence. (Luc Fayard)"
+Etape 4 
+
+	protoPara.affiche = function(){document.getElementById("cadre").innerHTML +=`<p style="color:${this.couleur};font-weight:${this.gras? 'bold' : 'normal'};">${this.texte} <br/>---<em>${this.auteur}</em></p>`;};
+	p1.affiche();
+	p2.affiche();
+Etape 5
+	
+	let p3 =Object.create(protoPara);
+	p3.texte = "Y'a rien de plus con qu'un ordinateur."
+	"Y'a rien de plus con qu'un ordinateur."
+	p3.auteur = "Louis Schuffenecker"
+	"Louis Schuffenecker"
+	p3.couleur="blue"
+	"blue"
+	p3.gras = true
+	true
+	
+	let propriétésP4 = {texte: "On voit bien que tu n’as pas rencontré certains de mes étudiants, Louis !", auteur: "enseignant anonyme",couleur: "olive", gras: false};
+	let p4 = Object.create(protoPara);
+	Object.assign(p4, propriétésP4);
+	Object { texte: "On voit bien que tu n’as pas rencon…", auteur: "enseignant anonyme", couleur: "olive", gras: false }
+	
+	p3.affiche();
+	p4.affiche();
+	
+	-->
+</html>

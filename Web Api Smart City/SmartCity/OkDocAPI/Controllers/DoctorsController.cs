@@ -9,34 +9,36 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Models;
+using SmartCity.Models;
+using OkDocAPI.Models;
 
 namespace OkDocAPI.Controllers
 {
     public class DoctorsController : ApiController
     {
-        private SmartCityContext db = new SmartCityContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Doctors
-        public IQueryable<Doctor> GetDoctor()
+        public IEnumerable<Doctor> GetDoctor()
         {
-            return db.Doctor;
+            return db.Doctor.Include("locality").ToList();
         }
 
         // GET: api/Doctors/5
         [ResponseType(typeof(Doctor))]
         public async Task<IHttpActionResult> GetDoctor(long id)
         {
-            Doctor doctor = await db.Doctor.FindAsync(id);
+            Doctor doctor = await db.Doctor.Include("locality").FirstAsync(d => d.Id == id);
             if (doctor == null)
             {
                 return NotFound();
             }
-
+            
             return Ok(doctor);
         }
 
         // PUT: api/Doctors/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutDoctor(long id, Doctor doctor)
         {
@@ -50,7 +52,19 @@ namespace OkDocAPI.Controllers
                 return BadRequest();
             }
 
-            db.Entry(doctor).State = EntityState.Modified;
+            //db.Entry(doctor).State = EntityState.Modified;
+            var entity = db.Doctor.Find(id);
+            entity.Locality = await db.Locations.FindAsync(doctor.Locality.City, doctor.Locality.PostalCode);
+            entity.Name = doctor.Name;
+            entity.LastName = doctor.LastName;
+            entity.latitude = doctor.latitude;
+            entity.longitude = doctor.longitude;
+            entity.Number = doctor.Number;
+            entity.Street = doctor.Street;
+            entity.PhoneNumber = doctor.PhoneNumber;
+            //entity.Schedule = doctor.Schedule;
+            //entity.Holiday = doctor.Holiday;
+            entity.RowVersion = doctor.RowVersion;
 
             try
             {
@@ -72,6 +86,7 @@ namespace OkDocAPI.Controllers
         }
 
         // POST: api/Doctors
+        [Authorize]
         [ResponseType(typeof(Doctor))]
         public async Task<IHttpActionResult> PostDoctor(Doctor doctor)
         {
@@ -80,13 +95,20 @@ namespace OkDocAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Doctor.Add(doctor);
+            if (await db.Locations.FindAsync(doctor.Locality.City, doctor.Locality.PostalCode) != null)
+            {
+
+                doctor.Locality = await db.Locations.FindAsync(doctor.Locality.City, doctor.Locality.PostalCode);
+                db.Doctor.Add(doctor);
+            }
+            
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = doctor.Id }, doctor);
         }
 
         // DELETE: api/Doctors/5
+        [Authorize]
         [ResponseType(typeof(Doctor))]
         public async Task<IHttpActionResult> DeleteDoctor(long id)
         {
@@ -94,6 +116,26 @@ namespace OkDocAPI.Controllers
             if (doctor == null)
             {
                 return NotFound();
+            }
+
+            IEnumerable<Schedule> schedules = doctor.Schedule.ToList();
+            if(schedules != null)
+            {
+                foreach(var schedule in schedules)
+                {
+                    db.Schedules.Remove(schedule);
+                }
+                    
+            }
+
+            IEnumerable<Holiday> holidays = doctor.Holiday.ToList();
+            if (holidays != null)
+            {
+                foreach (var holiday in holidays)
+                {
+                    db.Holidays.Remove(holiday);
+                }
+
             }
 
             db.Doctor.Remove(doctor);

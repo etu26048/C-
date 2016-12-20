@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<script>
+			function ajouter();	{}
+			function nommer();{}
+			function exporter();{}
+			function importer();{}
+			
+			function Dessin(nom, contenu, ajouter,redessiner){
+				this.nom=nom;
+				this.contenu= contenu;
+				this.ajouter = ajouter;
+				this.__proto__ = proto;
+				
+			}
+			function Elem(posX,posY,rayon, coul)
+			{
+				this.posX=posX;
+				this.posY=posY;
+				this.rayon=rayon;
+				this.coul=coul;
+				this.__proto__= proto;
+			}
+			var proto = {};
+			proto.redessiner = funciton (){}
+			
+			function init(){
+				canvas = 
+			
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="creation" width="800" height="600"></canvas>
+		<p>
+			<input type="button" name="Ajouter" value="Ajouter" onclick="ajouter();">
+			<input type="button" name="Nommer" value="Nommer" onclick="nommer();">
+			<input type="button" name="Exporter" value="Exporter" onclick="exporter();">
+			<input type="button" name="Importer" value="Importer" onclick="importer();">
+		</p>
+		<textarea id="cadreTexte" style="width:800px" rows="8"></textarea> 
+	</body>
+</html>

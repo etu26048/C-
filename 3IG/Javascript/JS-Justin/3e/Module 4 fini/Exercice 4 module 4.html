@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8/">
+	<script> 
+	var str;
+	var min;
+	var max;
+	function demandeNombre(min, max)
+	{	str = prompt("Entrez un nombre :");
+		if(str < max && str > min)
+		{
+			while(!isFinite(str.trim()))
+			{
+			str = prompt("Entrez un nombre :");
+			}
+		alert(str);
+		}
+	}
+	</script>
+</head>
+<body>
+<script>demandeNombre(2,8)</script>
+</body>
+</html>

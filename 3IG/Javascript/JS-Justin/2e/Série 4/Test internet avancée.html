@@ -1,0 +1,67 @@
+<html>
+  <head>
+   <script type="application/x-javascript">
+ function dessineNoeudPap(ctx, fillStyle) {
+ 
+   ctx.fillStyle = "rgba(200,200,200,0.3)";
+   ctx.fillRect(-30, -30, 60, 60);
+ 
+   ctx.fillStyle = fillStyle;
+   ctx.globalAlpha = 1.0;
+   ctx.beginPath();
+   ctx.moveTo(25, 25);
+   ctx.lineTo(-25, -25);
+   ctx.lineTo(25, -25);
+   ctx.lineTo(-25, 25);
+   ctx.closePath();
+   ctx.fill();
+ }
+ 
+ function point(ctx) {
+   ctx.save();
+   ctx.fillStyle = "black";
+   ctx.fillRect(-2, -2, 4, 4);
+   ctx.restore();
+ }
+ 
+ function dessine() {
+   var canvas = document.getElementById("canvas");
+   var ctx = canvas.getContext("2d");
+
+   // notez que toutes les autres translations sont relatives à
+   // celle-ci
+   ctx.translate(45, 45);
+
+   ctx.save();
+   //ctx.translate(0, 0); // non nécessaire
+   dessineNoeudPap(ctx, "red");
+   point(ctx);
+   ctx.restore();
+ 
+   ctx.save();
+   ctx.translate(85, 0);
+   ctx.rotate(45 * Math.PI / 180);
+   dessineNoeudPap(ctx, "green");
+   point(ctx);
+   ctx.restore();
+ 
+   ctx.save();
+   ctx.translate(0, 85);
+   ctx.rotate(135 * Math.PI / 180);
+   dessineNoeudPap(ctx, "blue");
+   point(ctx);
+   ctx.restore();
+ 
+   ctx.save();
+   ctx.translate(85, 85);
+   ctx.rotate(90 * Math.PI / 180);
+   dessineNoeudPap(ctx, "yellow");
+   point(ctx);
+   ctx.restore();
+ }
+    </script>
+  </head>
+  <body onload="dessine()">
+    <canvas id="canvas" width="300" height="300"></canvas>
+  </body>
+ </html>
