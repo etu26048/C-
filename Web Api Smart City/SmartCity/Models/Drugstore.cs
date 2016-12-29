@@ -21,7 +21,7 @@ namespace SmartCity.Models
         public long Id { get; set; }
         public Boolean Watch { get; set; }
         [StringLength(80)]
-        [Url]
+        [Url(ErrorMessage = "L'Url n'est pas valide !")]
         public string URLWebSite { get; set; }
         [Required]
         [StringLength(80)]

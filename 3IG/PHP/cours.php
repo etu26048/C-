@@ -14,20 +14,19 @@
         $programme[] = new Cours ("TFE", 25, true); 
 
         function __autoload($classe){
-          require_once "php/$classe.class.php";
+          require_once "$classe.class.php";
         }
 
       ?>  
   </head> 
   <body> 
     <h1>Vos cours</h1>
-    <script type="text/javascript">
-      <?php
-        foreach($programme as $cours){
-              echo $cours->sortieSimple();
-              echo " pour ".$cours->ratio()." du cursus.";
-        }
-      ?>
-    </script>
+	<?php
+	
+		foreach($programme as $cours){
+			  echo $cours->sortieSimple();
+			  echo " pour ".$cours->ratio()." du cursus.";
+		}
+    ?>
   </body> 
 </html>

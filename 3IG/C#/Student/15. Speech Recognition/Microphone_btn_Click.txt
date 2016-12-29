@@ -1,0 +1,48 @@
+       private async void Microphone_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Microphone_btn.Background = new SolidColorBrush(Colors.Blue);
+
+            // On récupère le fichier du son pour le faire jouer plus tard.
+            _media.SetUriSource(new Uri("ms-appx:///asset/song.wav"));
+            _media.Play();
+
+            if (_speech.State != SpeechRecognizerState.Idle) return;
+
+            string[] responses = { "Capitaine", "Iron", "exit" };
+
+            // Création de la liste des mots
+
+            var listConstraint = new SpeechRecognitionListConstraint(responses, "capitainOrIron");
+            _speech.Constraints.Add(listConstraint);
+
+            // Compilation du dictionnaire
+            SpeechRecognitionCompilationResult compilationResult =
+                                                    await _speech.CompileConstraintsAsync();
+
+            // Début de la reconnaissance vocale
+            SpeechRecognitionResult speechRecognitionResult = await _speech.RecognizeAsync();
+            string result = speechRecognitionResult.Text;
+
+
+            if (result.Contains("Capitaine"))
+            {
+                BackButton.Visibility = Visibility.Collapsed;
+                MyFrame.Navigate(typeof(CaptainTeam));
+                TitleTextBlock.Text = "Team Captain";
+            }
+            else if (result.Contains("Iron"))
+            {
+                BackButton.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(IronTeam));
+                TitleTextBlock.Text = "Team Iron";
+            }
+            else if (result.Contains("exit"))
+            {
+                Application.Current.Exit();
+            }
+
+            // Retour à la couleur de base du bouton : gris
+            Microphone_btn.Background = new SolidColorBrush(Colors.Gray);
+            // On refait jouer le son : pour le fun ^^
+            _media.Play();
+        }

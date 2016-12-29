@@ -29,7 +29,7 @@ namespace SmartCity.Models
         [Required]
         [StringLength(80)]
         [Index(IsUnique = true)]
-        [RegularExpression("([a-z][A-Z])+")]
+        [RegularExpression("([a-z -][A-Z -])+")]
         public string Name { get; set; }
         [Required]
         [StringLength(10)]

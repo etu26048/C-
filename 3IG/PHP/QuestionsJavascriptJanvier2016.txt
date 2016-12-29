@@ -1,0 +1,17 @@
+1. Javascript traite les fonctions comme des objets de premier ordre, expliquez.
+
+2. Le DOM est à Javascript ce que les nombres par complément sont au chiffre Arabe (un truc du genre), expliquez.
+
+3. Texte à trou à remplir, soit avec des noms anglais,soit avec des noms français.(les mots sont dans les slides normalement)
+
+4. Pour quelle valeur de (t) le test est-il correct ? if(!t)
+
+5. Expliquez la nature je JSON.stringify.
+
+6. Que signifie JSON ? Javascript Object Notation
+
+7. Pour quelle valeur de t le test est-il correct ? (if t == undefined)
+
+8. Idem précédent mais pour (t === undefined)
+
+9. Y'avais un texte à trou avec (__proto__, prototype, hoisting)

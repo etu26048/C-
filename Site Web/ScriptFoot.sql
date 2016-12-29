@@ -45,11 +45,11 @@ CREATE TABLE Produit (
 );
 
 CREATE TABLE LigneProduit (
+    Idproduit INT(6) PRIMARY KEY AUTO_INCREMENT,
     Quantite NUMERIC(5) NOT NULL CHECK (Quantite > 0),
     Prixreel NUMERIC(8 , 2 ) NOT NULL CHECK (PrixReel > 0),
     Refcommande VARCHAR(15) NOT NULL,
-    Refproduit VARCHAR(15) NOT NULL,
-    CONSTRAINT LigneProduit_ID PRIMARY KEY (RefCommande , RefProduit)
+    Refproduit VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE Promo (
@@ -66,7 +66,7 @@ CREATE TABLE Langue (
 
 CREATE TABLE TraductionProduit (
     IdTradProd INT(6) PRIMARY KEY AUTO_INCREMENT,
-    Libelle VARCHAR(50) NOT NULL,
+    Libelle VARCHAR(80) NOT NULL,
     Refproduit VARCHAR(15),
     Reflangue VARCHAR(20)
 );

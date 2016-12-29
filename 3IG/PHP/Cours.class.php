@@ -1,5 +1,6 @@
 <?php
-	class Cours {
+	public class Cours {
+
 		private $nom;
 		private $nbHeures;
 		private $estInformatique;

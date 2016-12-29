@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DataMart1617", "DataMart1617\DataMart1617.dwproj", "{E92A9F47-B67C-4A72-A3AD-E18696CEE1DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E92A9F47-B67C-4A72-A3AD-E18696CEE1DE}.Development|Default.ActiveCfg = Development
+		{E92A9F47-B67C-4A72-A3AD-E18696CEE1DE}.Development|Default.Build.0 = Development
+		{E92A9F47-B67C-4A72-A3AD-E18696CEE1DE}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
