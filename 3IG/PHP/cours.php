@@ -14,7 +14,7 @@
         $programme[] = new Cours ("TFE", 25, true); 
 
         function __autoload($classe){
-          require_once "$classe.class.php";
+          include "$classe.class.php";
         }
 
       ?>  
@@ -22,11 +22,20 @@
   <body> 
     <h1>Vos cours</h1>
 	<?php
-	
+		
+		print "<table><tr><th>Nom</th><th>NbHeures</th><th>Proportion</th></tr>";
 		foreach($programme as $cours){
-			  echo $cours->sortieSimple();
-			  echo " pour ".$cours->ratio()." du cursus.";
+			  //echo $cours->sortieSimple();
+			  //echo " pour ".$cours->ratio()." du cursus.";
+			  //print $cours->sortieHTML();
+			  print "<tr>";
+			  print "<td>".$cours->getNom()."</td>";
+			  print "<td>".$cours->getNbHeures()."</td>";
+			  print "<td>".$cours->divRatio($cours->ratio())."</td>";
+			  print "</tr>";
 		}
+		print "</table>";
+		
     ?>
   </body> 
 </html>

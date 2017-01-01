@@ -14,10 +14,10 @@
         <th>Catégorie</th><th>Femmes</th><th>Hommes</th><th>Graphique</th> 
       </tr> 
       <?php 
-        ligne("Moins de 18 ans", 1112811, 1164347); 
-        ligne("De 18 à 64 ans", 3438304, 3462994); 
-        ligne("Plus de 64 ans", 1152835, 877753); 
-        ligne("Total", 5703950, 5505094); 
+        ligne("Moins de 18 ans", 1112811, 1164347, $coulH, $coulF); 
+        ligne("De 18 à 64 ans", 3438304, 3462994, $coulH, $coulF); 
+        ligne("Plus de 64 ans", 1152835, 877753, $coulH, $coulF); 
+        ligne("Total", 5703950, 5505094, $coulH, $coulF); 
       ?> 
     </table> 
   </body> 
