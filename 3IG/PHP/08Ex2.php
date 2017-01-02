@@ -44,12 +44,12 @@
 					"Décembre"]
 				for(let i = 0; i < 12; i++)
 				{
-					document.getElementById("mois").innerHTML +=("<input type='radio' name='groupRadioMois'>"+libelleMois[i]+"</input><br>");
+					document.getElementById("mois").innerHTML +=("<input type='radio' name='groupRadioMois' value='"+libelleMois[i]+"'>"+libelleMois[i]+"</input><br>");
 				}
 				
 				for(let i = 1; i < 32; i++)
 				{
-					document.getElementById("naissOption").innerHTML +=("<option name='indiceJour'>"+i+"</option>");
+					document.getElementById("naissOption").innerHTML +=("<option value='"+i+"'>"+i+"</option>");
 				}
 				
 				document.getElementById("submit").addEventListener("click",dateValide());
@@ -107,7 +107,7 @@
 				<legend>Date de naissance</legend>
 				
 				<p><label name="jourNaiss">Jour de naissance: </label>
-				<select id="naissOption" for="jourNaiss" onchange="dateValide()"></select><br>
+				<select name="indiceJour" id="naissOption" for="jourNaiss" onchange="dateValide()"></select><br>
 				<span id="commentaire"></span></p>
 				
 				<label name="moisNaiss">Mois de naissance: </label>

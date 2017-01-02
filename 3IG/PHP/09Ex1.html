@@ -41,12 +41,35 @@
     </style> 
 	<script>
 	
-		function(){
+		function addCookies(){
 			
+			document.cookie = "texte="+document.getElementById("cTexte").value;
+			document.cookie = "fond="+document.getElementById("cFond").value;
 			
 		}
 	
+		function refresh(){
+			
+			let paraCookie = document.getElementById("pCookies");
+			paraCookie.innerHTML = document.cookie;
+		}
 	
+		function deleteCookies(){
+			
+			var moment = new Date();
+			moment.setTime(moment.getTime() - 1000);
+			
+			document.cookie = "texte=cTexte;expires="+moment.toUTCString();
+			document.cookie = "fond=cFond;expires="+moment.toUTCString();
+			
+			refresh();
+	
+		}	
+		
+		function reloadPage(){
+			
+			location.reload();
+		}
 	</script>
   </head> 
   <body> 
@@ -70,17 +93,17 @@
             <input type="text" id="cTexte" name="cTexte" /><br/> 
             <label for="cFond">Couleur du fond :</label><br/> 
             <input type="text" id="cFond" name="cFond" /> 
-            <p><button id="bMAJ">Mise à jour</button></p> 
+            <p><button id="bMAJ" onclick="addCookies()">Mise à jour</button></p> 
           </form> 
         </div> 
         <div> 
           Vos cookies : 
           <p id="pCookies"></p> 
-          <button id="bRafraichir">Rafraîchir</button> 
+          <button id="bRafraichir" onclick="refresh()">Rafraîchir</button> 
         </div> 
         <div> 
-          <button id="bSupprimer">Supprimer les cookies</button><br/> 
-          <button id="bRecharger">Recharger la page</button> 
+          <button id="bSupprimer" onclick="deleteCookies()">Supprimer les cookies</button><br/> 
+          <button id="bRecharger" onclick="reloadPage()">Recharger la page</button> 
         </div> 
       </div> 
     </div> 

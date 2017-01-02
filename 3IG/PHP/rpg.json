@@ -1,0 +1,47 @@
+{ 
+  "Planescape: Torment" : { 
+    "price" : 9.09, 
+    "genre" : "RPG", 
+    "editor" : "Black Isle Studios" 
+  },  
+  "Neverwinter Nights 2 Complete" : { 
+    "price" : 22.78, 
+    "genre" : "RPG", 
+    "editor" : "Obsidian Entertainment" 
+  }, 
+  "Legend of Grimrock II" : { 
+    "price" : 21.79, 
+    "genre" : "RPG", 
+    "editor" : "Almost Human" 
+  }, 
+  "Shadowrun returns" : { 
+    "price" : 13.69, 
+    "genre" : "RPG", 
+    "editor" : "Harebrained Schemes" 
+  }, 
+  "Pillars of Eternity: Hero Edition" : { 
+    "price" : 41.99, 
+    "genre" : "RPG", 
+    "editor" : "Obsidian Entertainment" 
+  }, 
+  "Arx Fatalis" : { 
+    "price" : 5.49, 
+    "genre" : "RPG", 
+    "editor" : "Arkane Studios" 
+  }, 
+  "Wasteland 2: Director's Cut" : { 
+    "price" : 39.99, 
+    "genre" : "RPG", 
+    "editor" : "inXile Entertainment" 
+  }, 
+  "Gothic 3: Enhanced Edition" : { 
+    "price" : 9.09, 
+    "genre" : "RPG", 
+    "editor" : "Piranha Bytes" 
+  }, 
+  "Baldur's Gate II: Enhanced Edition" : { 
+    "price" : 18.19,
+	"genre" : "RPG", 
+    "editor" : "Beamdog" 
+  }
+}

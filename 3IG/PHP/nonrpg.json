@@ -1,0 +1,37 @@
+{ 
+  "Rocket League" : { 
+    "price" : 14.84, 
+    "genre" : "Action", 
+    "editor" : "Psyonix" 
+  },  
+  "Call of Duty: Black Ops III" : { 
+    "price" : 34.99, 
+    "genre" : "FPS", 
+    "editor" : "Activision" 
+  }, 
+  "Anno 2205" : { 
+    "price" : 28.78, 
+    "genre" : "Strategy", 
+    "editor" : "Ubisoft" 
+  }, 
+  "Counter Strike: Global Offensive" : { 
+    "price" : 9.26, 
+    "genre" : "FPS", 
+    "editor" : "Valve" 
+  }, 
+  "Grand Theft Auto V" : { 
+    "price" : 28.89, 
+    "genre" : "Action", 
+    "editor" : "Rockstar North" 
+  }, 
+  "FIFA 16" : { 
+    "price" : 15.18, 
+    "genre" : "Sport", 
+    "editor" : "Electronic Arts" 
+  }, 
+  "Star Wars: Battlefront" : { 
+    "price" : 39.99, 
+    "genre" : "Action", 
+    "editor" : "Origin" 
+  } 
+}
