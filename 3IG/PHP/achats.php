@@ -1,4 +1,11 @@
-<!doctype html> 
+<?php
+	session_start();
+	if(!isset($_SESSION['order']))
+		$_SESSION['order'] = array();
+	if(isset($_GET['clear']))			
+		unset($_SESSION['order']);	
+?>
+<!DOCTYPE html>
 <html> 
   <head> 
     <meta charset="utf-8" /> 
@@ -47,7 +54,35 @@
 		  background-color: orange; 
 		}
 	</style>
-	<script src="achats.js"></script>
+	<script>
+	
+		window.onload =  function(){
+	
+			document.getElementById("bRPG").addEventListener("click", goToRPG('rpg'));
+			document.getElementById("bNonRPG").addEventListener("click", goToRPG('nonrpg'));
+			document.getElementById("bEmpty").addEventListener("click", clear());
+		}
+
+		function goToRPG(genre){
+			
+			return function(){
+				document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?games="+genre.trim();
+			}
+		}
+		
+		function ordering(genre, game_name){
+	
+			//pas besoin de return function(), pq ? aucune idée
+			document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?games="+genre.trim()+"&order="+game_name.trim();
+		}
+		
+		function clear(){
+			
+			return function(){
+				document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?clear=true";
+			}
+		}
+	</script>
   </head> 
   <body> 
 	  <?php
@@ -58,12 +93,16 @@
 			$genre = $_GET['games'];
 			
 			if(strcmp($genre, "rpg") == 0){
+				
+				$nomFichier = "rpg";
 				$fichier = fopen("rpg.json", "r"); //Ouverture du fichier en lecture
 				$contenu = fread($fichier, filesize("rpg.json"));
 				$items = json_decode($contenu, true);
 			}
 			
 			if(strcmp($genre, "nonrpg") == 0){
+				
+				$nomFichier = "nonrpg";
 				$fichier = fopen("nonrpg.json", "r"); //Ouverture du fichier en lecture
 				$contenu = fread($fichier, filesize("nonrpg.json"));
 				$items = json_decode($contenu, true);
@@ -85,8 +124,26 @@
 	  
       <div id="main"> 
 		<?php
-			if(isset($_GET['order'])){
-				print "Commande : $_GET['order']";
+			if(isset($_GET['order']) && isset($_GET['games'])){
+				
+				$game_name = $_GET['order'];
+				$genre = $_GET['order'];
+				$items = json_decode($contenu, true);
+				$trouve = 0;
+				foreach($items as $row => $games){
+					if(strcmp($row, "$game_name") == 0){
+						$trouve = 1;
+						print "Commande : ".$game_name." ajouté";
+						print "<br>";
+						array_push($_SESSION['order'], array('name' => $row,
+							  'price' => $games['price']));
+						break;//Return
+					}
+				}
+				if($trouve == 0)
+					print "Commande : ".$game_name." incorrect !";
+					
+				
 			}
 		
 		?>
@@ -98,12 +155,12 @@
 				
 				print "<tr><td>$row</td>";
 				foreach($games as $game){
-					/*if(strcmp($game, "price"))
-						print "<td>$game &euro;</tr>";
-					else*/
+					if(strcmp("$games", "price") == 0)
+						print "<td>$game&euro;</td>";
+					else
 						print "<td>$game</td>";
 				}
-				print "<td><buttonn>Commander</button></td>";
+				print "<td><button onclick='ordering(\"".$nomFichier."\", \"".$row."\")'>Commander</button></td>";
 				print "</tr>";
 			}
 			print "</table>";
@@ -115,6 +172,24 @@
       <div id="basket"> 
         <h2>Votre panier :</h2> 
         <div id="basketContents"> 
+		<?php
+			$total = 0;
+			if(empty($_SESSION['order']))
+				print "Votre panier est vide";
+			else{
+				
+				foreach($_SESSION['order'] as $key => $value){
+					
+					print "-";
+					print $value['name']." (";
+					print $value['price'].")";
+					$total += $value['price'];
+					print "<br>";
+				}
+				print "<br>Total : $total &euro;";
+			}
+		
+		?>
         </div> 
       </div> 
  

@@ -38,11 +38,9 @@
 		
 		function divRatio($long){
 			
-			return function(){
 			$ratio = $this->ratio();
-			print "<div style='height=12px; width=$long px; position=relative; background-color:lightgrey; '>";
-			print "<div style='height=12px; width=$ratio px; position=absolute; top=0;left=0;'></div></div>";
-			}
+			return "<div style:'height=12px; width:".$long."px; position:relative; background-color:lightgrey; '>
+			<div style='height:12px; width:".$ratio." px; position:absolute; top:0;left:0;'></div></div>";
 		}
 
 		function getNom(){
