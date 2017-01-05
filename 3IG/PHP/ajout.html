@@ -1,0 +1,58 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <meta charset="utf-8" /> 
+    <title>Ajout de membre</title> 
+    <style> 
+      #commentaire { 
+        color: red; 
+        font-weight: bold; 
+      } 
+      .message { 
+        color: blue; 
+        font-weight: bold; 
+      } 
+    </style>
+	<script>
+	
+		function password_is_valid(){
+			
+			let commentaire = document.getElementById("commentaire");
+			let password = document.getElementById("mdp");
+			let vide = print_commentaire(commentaire);
+			if(vide)
+				commentaire.innerHTML = "";
+			
+		}
+		
+		function print_commentaire(commentaire){
+			if(password.length < 6){
+				commentaire.innerHTML = "Minimum 6 caractères";
+				return false;
+			}
+			if(/\d/.test(password)){
+				commentaire.innerHTML = "Au moins 1 chiffre !";
+				return false;
+			}
+		}
+	</script>
+	</head> 
+  <body> 
+    <form action="ajout.php" method="POST"> 
+      <p> 
+        <label for="pseudo">Pseudo : </label> 
+        <input id="pseudo" name="pseudo" type="text" required=true /> 
+      </p> 
+      <p> 
+        <label for="mdp">Mot de passe : </label> 
+        <input id="mdp" name="mdp" type="password" required=true onchange="password_is_valid()"/> 
+        <span id="commentaire"></span> 
+      </p> 
+      <p> 
+        <input id="admin" name="admin" type="checkbox" /> 
+        <label for="admin">Admin</label> 
+      </p> 
+      <button id="bSubmit" type="submit">Ajouter</button> 
+    </form> 
+  </body> 
+</html> 

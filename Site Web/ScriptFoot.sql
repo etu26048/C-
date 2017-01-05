@@ -13,8 +13,8 @@ CREATE TABLE Customer (
     Nom VARCHAR(50) NOT NULL,
     Prenom VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL,
-    Motdepasse VARCHAR(20) NOT NULL,
-    Confirmpw VARCHAR(20) NOT NULL,
+    Motdepasse VARCHAR(50) NOT NULL,
+    Confirmpw VARCHAR(50) NOT NULL,
     Telephone VARCHAR(10),
     Datenaissance DATE,
     Civilite VARCHAR(4) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE Customer (
 );
 
 CREATE TABLE Commande (
-    Reference VARCHAR(15) NOT NULL,
+    Reference INT(15) AUTO_INCREMENT NOT NULL,
     Datecommande DATE NOT NULL,
     Montantreduction NUMERIC(5 , 2 ) NOT NULL CHECK (MontantReduction > 0),
     Numerocli INT NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE LigneProduit (
     Idproduit INT(6) PRIMARY KEY AUTO_INCREMENT,
     Quantite NUMERIC(5) NOT NULL CHECK (Quantite > 0),
     Prixreel NUMERIC(8 , 2 ) NOT NULL CHECK (PrixReel > 0),
-    Refcommande VARCHAR(15) NOT NULL,
+    Refcommande INT(15) NOT NULL,
     Refproduit VARCHAR(15) NOT NULL
 );
 
