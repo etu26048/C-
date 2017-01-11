@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+		</style>
+	</head>
+	<body>
+		
+		<table id="product">
+			<tr><th>Libelle</th><th>Quantité</th></tr>
+			<script>
+			window.onload = init;
+			
+			//affichage des produits
+			function init(){
+				var req = new XMLHttpRequest();
+				var url = "http://vm-debian.iesn.be/ig28/LaboAjax/ExRecap/soldes2.php"
+				req.open("GET", url);
+				req.onreadystatechange = function(){
+					if(req.readyState == 4 && req.statue == 200){
+						
+						let items = JSON.parse(req.responseText);
+						
+						for(let i = 0; i < items.length; i++){
+							
+							document.write("<tr><td>"+items[i]["nom"]+"</td><td>"+items[i]["quantity"]+"</td><td><button>Acheter</button></td></tr>")
+						}
+						
+						var buttons = document.getElementsByTagName("button");
+						for(let i = 0; i < buttons.length; i++){
+							buttons[i].addEventListener("click",updateStock(buttons[i].innerHTML));
+						}
+					}
+				}
+				req.send();
+			}
+			
+			function updateStock(item){
+				return function(){
+					var req = new XMLHttpRequest();
+					var url = "http://vm-debian.iesn.be/ig28/LaboAjax/ExRecap/soldes2.php?produit="+item;
+					req.open("GET",url);
+					req.onreadystatechange = function(){
+						
+						if(req.readyState == 4 && req.statue == 200){
+							
+							
+						}
+					}
+					req.send();
+				}
+			}
+			
+			</script>
+		</table>
+	</body>
+</html>

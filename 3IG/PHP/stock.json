@@ -1,0 +1,14 @@
+{
+	"Call of duty " : {
+		"nom" : "Call of duty",
+		"quantity" : 50
+	},	
+	"Battlefield " : {
+		"nom" : "Battlefield",
+		"quantity" : 15
+	},
+	"Counter Strike: Global Offensive" : { 
+		"nom" : "Counter Strike: Global Offensive", 
+		"quantity" : 1,
+	}
+}

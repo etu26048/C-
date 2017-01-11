@@ -18,23 +18,28 @@
 		function password_is_valid(){
 			
 			let commentaire = document.getElementById("commentaire");
-			let password = document.getElementById("mdp");
-			let vide = print_commentaire(commentaire);
-			if(vide)
-				commentaire.innerHTML = "";
+			let password = document.getElementById("mdp").value;
+			let x = print_commentaire(commentaire, password);
 			
+			if(x) document.getElementById("bSubmit").addEventListener("click",function(){alert('coucou');});
+
 		}
 		
-		function print_commentaire(commentaire){
+		function print_commentaire(commentaire, password){
+		
 			if(password.length < 6){
 				commentaire.innerHTML = "Minimum 6 caractères";
 				return false;
 			}
-			if(/\d/.test(password)){
+			if(!/\d/.test(password)){
 				commentaire.innerHTML = "Au moins 1 chiffre !";
 				return false;
 			}
+			
+			//Ne passera jamais ici sauf si le mdp est correct
+			commentaire.innerHTML = "";
 		}
+		
 	</script>
 	</head> 
   <body> 

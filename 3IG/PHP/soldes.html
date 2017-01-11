@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+
+	<script>
+		var tableStock;
+		var arrayItem;
+		window.onload = init;
+		function init() {
+			tableStock = document.getElementById("tableStock");
+			var req = new XMLHttpRequest();
+	 		var url = "http://vm-debian.iesn.be/ig10/Labo3/stock.json";
+			req.open("GET", url);
+	 		req.onreadystatechange = function () {
+	 			if (req.readyState == 4 && req.status == 200) {
+	 							
+	 				var stock = JSON.parse(req.responseText);
+	 				arrayItem = [];
+	 				for(var item in stock) {
+	 					arrayItem.push(stock[item]);
+	 				}
+
+	 				for(var i = 0; i < arrayItem.length; i++) (function(i){
+	 					var currentItem = arrayItem[i];
+	 					tableStock.innerHTML += "<tr><td>" + currentItem.nom + "</td>" + "<td class='stock'>" + currentItem.stock + "</td><td><button id="+i+">Acheter</button></td></tr>"; 
+	 				})(i);
+
+	 				var buttons = document.getElementsByTagName("button");
+	 				for (var j = 0; j < buttons.length; j++) (function(j){
+	 					buttons[j].onclick = function() {
+	 						var req = new XMLHttpRequest();
+	 						var url = "http://vm-debian.iesn.be/ig10/Labo3/soldes.php?produit=" + arrayItem[j].nom;
+	 						req.open("GET", url);
+	 						req.onreadystatechange = function () {
+	 							if (req.readyState == 4 && req.status == 200) {
+	 								updateStock();
+	 							}
+	 						}
+	 						req.send();
+
+	 					};
+	 				})(j);
+	 			}
+	 		}
+	 		req.send();
+
+	 		setInterval(updateStock, 1000);
+		}
+
+		function updateStock() {
+			var tdStocks = document.getElementsByClassName('stock');
+			var req = new XMLHttpRequest();
+	 		var url = "http://vm-debian.iesn.be/ig10/Labo3/stock.json";
+	 		req.open("GET", url);
+	 		req.onreadystatechange = function () {
+	 			if(req.readyState == 4 && req.status == 200) {
+	 				var newStock = JSON.parse(req.responseText);
+					for (var i = 0; i < tdStocks.length; i++) {
+				
+	 					tdStocks[i].innerHTML = newStock[i].stock;
+					}
+	 			}
+	 		}
+	 		req.send();
+	 		
+		}
+	</script>
+
+</head>
+<body>
+
+	<table id="tableStock" style="width:100%"></table>
+</body>
+</html>

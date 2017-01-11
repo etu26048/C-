@@ -1,12 +1,15 @@
-delete from promo;
 delete from traductioncategorie;
 delete from traductionproduit;
+delete from ligneproduit;
 delete from langue;
 delete from produit;
 delete from categorie;
+delete from commande;
+delete from customer;
+delete from promo;
 
 /*Insertion dans promo*/
-/*INSERT INTO `sitefoot`.`promo`
+INSERT INTO `sitefoot`.`promo`
 (`Reference`,
 `Pourcentage`,
 `Datedebut`,
@@ -14,8 +17,8 @@ delete from categorie;
 VALUES
 (0,
 25.00,
-"17-10-2016",
-"27-10-2017");
+"2016-10-17",
+"2017-01-10");
 
 INSERT INTO `sitefoot`.`promo`
 (`Reference`,
@@ -25,8 +28,8 @@ INSERT INTO `sitefoot`.`promo`
 VALUES
 (1,
 5.00,
-"01-01-2017",
-"08-01-2017");/
+"2017-01-08",
+"2017-01-12");
 
 INSERT INTO `sitefoot`.`promo`
 (`Reference`,
@@ -36,8 +39,8 @@ INSERT INTO `sitefoot`.`promo`
 VALUES
 (2,
 2.00,
-"02-04-2017",
-"02-04-2018");
+"2016-12-31",
+"2017-01-10");
 /*----------------------------------------*/
 /*Categorie*/
 /*Chaussures*/
@@ -63,7 +66,7 @@ VALUES
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
 VALUES
-("P0001","/ballon1.png",22.50,null,2);
+("P0001","/ballon1.png",22.50,1,2);
 
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
@@ -84,28 +87,28 @@ VALUES
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
 VALUES
-("P0008","/vetement1.png",55,null,1);
+("P0008","/vetement1.png",60,null,1);
 
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
 VALUES
-("P0009","/vetement2.png",64.50,null,1);
+("P0009","/vetement2.png",30,null,1);
 
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
 VALUES
-("P0010","/vetement3.png",31,null,1);
+("P0010","/vetement3.png",75,null,1);
 
 /*Insertion des chaussures*/
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
 VALUES
-("P0011","/chaussure1.png", 350, null, 0);
+("P0011","/chaussure1.png", 350, 2, 0);
 
 INSERT INTO `sitefoot`.`produit`
 (`Reference`,`Urlimage`,`Prixunitaire`,`Referencepromo`,`Referencecategorie`)
 VALUES
-("P0012","/chaussure2.png",270,null,0);
+("P0012","/chaussure2.png",270, 0,0);
 
 /*-----------------------------------------*/
 /*Insertion dans langue*/
@@ -121,6 +124,7 @@ VALUES
 
 /*---------------------------------------*/
 /*Traduction du produit*/
+/*Ballons*/
 INSERT INTO `sitefoot`.`traductionproduit`
 (`Libelle`,`Refproduit`,`Reflangue`)
 VALUES
@@ -161,6 +165,7 @@ INSERT INTO `sitefoot`.`traductionproduit`
 VALUES
 ("Adidas bleu/blanc coupe du monde","P0004","fr");
 
+/*Chaussures*/
 INSERT INTO `sitefoot`.`traductionproduit`
 (`Libelle`,`Refproduit`,`Reflangue`)
 VALUES
@@ -180,6 +185,34 @@ INSERT INTO `sitefoot`.`traductionproduit`
 (`Libelle`,`Refproduit`,`Reflangue`)
 VALUES
 ("Nike blue/black","P0012","fr");
+
+/*Vêtements*/
+INSERT INTO `sitefoot`.`traductionproduit`
+(`Libelle`,`Refproduit`,`Reflangue`)
+VALUES
+("PANTALON GARDIEN UHLSPORT KEVLAR NOIR","P0008","fr");
+INSERT INTO `sitefoot`.`traductionproduit`
+(`Libelle`,`Refproduit`,`Reflangue`)
+VALUES
+("GOALKEEPER PANTS UHLSPORT KEVLAR BLACK","P0008","en");
+
+INSERT INTO `sitefoot`.`traductionproduit`
+(`Libelle`,`Refproduit`,`Reflangue`)
+VALUES
+("SHORT GARDIEN UHLSPORT SIDESTEP NOIR JUNIOR","P0009","fr");
+INSERT INTO `sitefoot`.`traductionproduit`
+(`Libelle`,`Refproduit`,`Reflangue`)
+VALUES
+("SHORT GOALKEEPER UHLSPORT SIDESTEP BLACK JUNIOR","P0009","en");
+
+INSERT INTO `sitefoot`.`traductionproduit`
+(`Libelle`,`Refproduit`,`Reflangue`)
+VALUES
+("MAILLOT ISLANDE GARDIEN 2016 ","P0010","fr");
+INSERT INTO `sitefoot`.`traductionproduit`
+(`Libelle`,`Refproduit`,`Reflangue`)
+VALUES
+("GOALKEEPER 2016 SHIRT","P0010","en");
 /*INSERT INTO `sitefoot`.`traductionproduit`
 (
 `Libelle`,

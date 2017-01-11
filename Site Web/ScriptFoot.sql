@@ -54,7 +54,7 @@ CREATE TABLE LigneProduit (
 
 CREATE TABLE Promo (
     Reference NUMERIC(5) NOT NULL,
-    Pourcentage NUMERIC(3 , 2 ) NOT NULL CHECK (Pourcentage BETWEEN 0 AND 100),
+    Pourcentage NUMERIC(3 ,0 ) NOT NULL CHECK (Pourcentage BETWEEN 0 AND 100),
     Datedebut DATE NOT NULL,
     Datefin DATE NOT NULL,
     CONSTRAINT Promo_ID PRIMARY KEY (Reference)

@@ -66,14 +66,14 @@
 		function goToRPG(genre){
 			
 			return function(){
-				document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?games="+genre.trim();
+				document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?games="+encodeURIComponent(genre);
 			}
 		}
 		
 		function ordering(genre, game_name){
 	
 			//pas besoin de return function(), pq ? aucune idée
-			document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?games="+genre.trim()+"&order="+game_name.trim();
+			document.location.href = "http://vm-debian.iesn.be/ig10/Labo3/achats.php?games="+encodeURIComponent(genre)+"&order="+encodeURIComponent(game_name);
 		}
 		
 		function clear(){
@@ -87,12 +87,14 @@
   <body> 
 	  <?php
 		
-		//BUGGGGGGGGGGGGGGGGGGGGG
+		$nomFichier = "rpg";
+		$genre = "rpg";
+		
 		if(isset($_GET['games'])){
 
 			$genre = $_GET['games'];
-			
-			if(strcmp($genre, "rpg") == 0){
+			$nomFichier = $_GET['games'];
+			/*if(strcmp($genre, "rpg") == 0){
 				
 				$nomFichier = "rpg";
 				$fichier = fopen("rpg.json", "r"); //Ouverture du fichier en lecture
@@ -106,8 +108,12 @@
 				$fichier = fopen("nonrpg.json", "r"); //Ouverture du fichier en lecture
 				$contenu = fread($fichier, filesize("nonrpg.json"));
 				$items = json_decode($contenu, true);
-			}
+			}*/
+			
 		}
+		$fichier = fopen($nomFichier.".json", "r"); //Ouverture du fichier en lecture
+		$contenu = fread($fichier, filesize($nomFichier.".json"));
+		$items = json_decode($contenu, true);
 		
 		?>
     <div id="wrapper"> 
@@ -127,12 +133,11 @@
 			if(isset($_GET['order']) && isset($_GET['games'])){
 				
 				$game_name = $_GET['order'];
-				$genre = $_GET['order'];
 				$items = json_decode($contenu, true);
-				$trouve = 0;
+				$trouve = false;
 				foreach($items as $row => $games){
 					if(strcmp($row, "$game_name") == 0){
-						$trouve = 1;
+						$trouve = true;
 						print "Commande : ".$game_name." ajouté";
 						print "<br>";
 						array_push($_SESSION['order'], array('name' => $row,
@@ -140,7 +145,7 @@
 						break;//Return
 					}
 				}
-				if($trouve == 0)
+				if(!$trouve)
 					print "Commande : ".$game_name." incorrect !";
 					
 				
@@ -154,12 +159,15 @@
 			foreach($items as $row => $games){
 				
 				print "<tr><td>$row</td>";
-				foreach($games as $game){
+				/*foreach($games as $game){
 					if(strcmp("$games", "price") == 0)
 						print "<td>$game&euro;</td>";
 					else
 						print "<td>$game</td>";
-				}
+				}*/
+				print "<td>$games[price]&euro;</td>";
+				print "<td>$games[genre]</td>";
+				print "<td>$games[editor]</td>";
 				print "<td><button onclick='ordering(\"".$nomFichier."\", \"".$row."\")'>Commander</button></td>";
 				print "</tr>";
 			}
@@ -182,7 +190,7 @@
 					
 					print "-";
 					print $value['name']." (";
-					print $value['price'].")";
+					print $value['price']."&euro;)";
 					$total += $value['price'];
 					print "<br>";
 				}
