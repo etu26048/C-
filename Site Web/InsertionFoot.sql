@@ -18,7 +18,7 @@ VALUES
 (0,
 25.00,
 "2016-10-17",
-"2017-01-10");
+"2017-01-28");
 
 INSERT INTO `sitefoot`.`promo`
 (`Reference`,

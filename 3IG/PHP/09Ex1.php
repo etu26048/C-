@@ -12,11 +12,12 @@
 		$cFond = $_COOKIE['cFond'];
 	}
 	
-	/*if(isset($_COOKIE['texte']))
+	//Ca sert à rien ça !	
+	if(isset($_COOKIE['texte']) && isset($_COOKIE['fond'])){
 		$cTexte = $_COOKIE['texte'];
+		$cFond = $_COOKIE['fond'];
+	}
 		
-	if(isset($_COOKIE['fond']))
-		$cFond = $_COOKIE['fond'];*/
 		
 	
 ?>
@@ -73,6 +74,7 @@
 		function refresh(){
 			
 			let paraCookie = document.getElementById("pCookies");
+			//On récupère les cookies du site enregistrer précédemment 
 			paraCookie.innerHTML = document.cookie;
 		}
 	
@@ -109,12 +111,13 @@
 		Proin et ligula ut eros fermentum gravida nec eu nulla. 
       </p> 
 	  <script>
+		window.onload = function(){
 		<?php
 			print "document.getElementById('main').style.backgroundColor = '$cFond' ";
 		?>;
 		<?php
 			print "document.getElementById('main').style.color = '$cTexte' ";
-		?>;
+		?>;}
 	  </script>
       <div id="info"> 
         <div> 
