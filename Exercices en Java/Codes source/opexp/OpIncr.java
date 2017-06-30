@@ -1,0 +1,28 @@
+public class OpIncr
+{ public static void main(String[] args)
+  { int i, j, n ;
+
+    i = 0 ; n = i++ ;
+    System.out.println ("A : i = " + i + "  n = " +  n ) ;
+
+    i = 10 ; n = ++ i ;
+    System.out.println ("B : i = " + i + "  n = " +  n ) ;
+
+    i = 20 ; j = 5 ; n = i++ * ++ j ;
+    System.out.println ("C : i = " + i + "  j = " + j + "  n = " + n ) ;
+
+    i = 15 ; n = i += 3 ;
+    System.out.println ("D : i = " + i + "  n = " +  n) ;
+
+    i = 3 ; j = 5 ; n = i *= --j ;
+    System.out.println ("E : i = " + i + "  j = " + j + "  n = " + n) ;
+  }
+}
+
+/*
+A : i = 1  n = 0
+B : i = 11  n = 11
+C : i = 21  j = 6  n = 120
+D : i = 18  n = 18
+E : i = 12  j = 4  n = 12
+*/
